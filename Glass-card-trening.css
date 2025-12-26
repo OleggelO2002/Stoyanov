@@ -12,7 +12,7 @@
 /* Настраиваем оболочку карточек */
 .stream-table tbody tr {
   position:relative;
-  flex:0 0 calc(50% - 20px);
+  flex:0 0 calc(48% - 0px);
 }
 
 /* Адаптируем карточки под разные разрешения */
@@ -47,6 +47,7 @@
 
 /* Настраиваем флекс для содержимого карточек */
 .stream-table tbody tr td {
+    
   position:relative;
   display:flex;
   height:100%;
@@ -54,8 +55,12 @@
   padding:0!important;
 }
 
+.container {
+margin-left: 5% !important;
+}
+
 body{
-background-image: url("https://static.tildacdn.pub/tild6263-6433-4038-b663-393038303065/2.png") !important;
+background-image: url("https://static.tildacdn.pub/tild6131-6136-4364-b534-376663356261/photo.png") !important;
 }
 
 #searchWrapper {
@@ -75,8 +80,8 @@ background: transparent !important;
   top: 0;
   left: 0;
   width: 100%;
-  max-width: 400px !important;  /* под размер карточки */
-  height: 321px !important;
+  max-width: 350px !important;  /* под размер карточки */
+  height: 282px !important;
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -84,17 +89,17 @@ background: transparent !important;
   align-items: flex-start;
 
   /* Стекло */
-  background: rgba(255,255,255,0.05);
+  background: linear-gradient(169.78deg, rgba(105, 126, 125, 0.2) 9.39%, rgba(0, 0, 0, 0.2) 78.17%);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 
 
 
   /* Нестандартная форма через SVG mask */
-  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 397 321" xmlns="http://www.w3.org/2000/svg"><path d="M1.48438 16.327 C1.48438 8.12962 8.12963 1.48438 16.327 1.48438 H164.058 C168.703 1.48438 173.081 3.65924 175.887 7.36134 L193.694 30.856 C196.5 34.5581 200.878 36.7329 205.523 36.7329 H379.971 C388.168 36.7329 394.813 43.3782 394.813 51.5755 V304.642 C394.813 312.839 388.168 319.484 379.971 319.484 H16.327 C8.12962 319.484 1.48438 312.839 1.48438 304.642 V16.327 Z" fill="white"/></svg>');
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 397 321" xmlns="http://www.w3.org/2000/svg"><path d="M1.48438 16.327 C1.48438 8.12962 8.12963 1.48438 16.327 1.48438 H164.058 C168.703 1.48438 173.081 3.65924 175.887 7.36134 L193.694 30.856 C196.5 34.5581 200.878 36.7329 205.523 36.7329 H379.971 C388.168 36.7329 394.813 43.3782 394.813 51.5755 V304.642 C394.813 312.839 388.168 319.484 379.971 319.484 H16.327 C8.12962 319.484 1.48438 312.839 1.48438 304.642 V16.327 Z" fill="rgb(0,0,0)"/></svg>');
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: cover;
-  mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 397 321" xmlns="http://www.w3.org/2000/svg"><path d="M1.48438 16.327 C1.48438 8.12962 8.12963 1.48438 16.327 1.48438 H164.058 C168.703 1.48438 173.081 3.65924 175.887 7.36134 L193.694 30.856 C196.5 34.5581 200.878 36.7329 205.523 36.7329 H379.971 C388.168 36.7329 394.813 43.3782 394.813 51.5755 V304.642 C394.813 312.839 388.168 319.484 379.971 319.484 H16.327 C8.12962 319.484 1.48438 312.839 1.48438 304.642 V16.327 Z" fill="white"/></svg>');
+  mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 397 321" xmlns="http://www.w3.org/2000/svg"><path d="M1.48438 16.327 C1.48438 8.12962 8.12963 1.48438 16.327 1.48438 H164.058 C168.703 1.48438 173.081 3.65924 175.887 7.36134 L193.694 30.856 C196.5 34.5581 200.878 36.7329 205.523 36.7329 H379.971 C388.168 36.7329 394.813 43.3782 394.813 51.5755 V304.642 C394.813 312.839 388.168 319.484 379.971 319.484 H16.327 C8.12962 319.484 1.48438 312.839 1.48438 304.642 V16.327 Z" fill="rgb(10,10,10)"/></svg>');
   mask-repeat: no-repeat;
   mask-size: cover;
 
@@ -128,12 +133,103 @@ background: transparent !important;
 }
 
 .glass-card .stream-title {
-  font-size: 18px;
-  font-weight: 600;
+position: relative !important;
+top: 20%;
+font-style: normal;
+font-weight: 800;
+font-size: 26px;
+line-height: 20px;
+color: #FFF;
+text-shadow: 0px 0px 24px #000000;
 }
 
 .glass-card .subtitle {
-  font-size: 14px;
-  opacity: 0.85;
-  margin-top: 4px;
+position: relative !important;
+top: 20%;  
+color: #ffffff;
+font-weight: 600;
+font-size: 15px;
+z-index: 9999999 !important;
+text-shadow: 0px 0px 24px #000000;
+}
+
+td > a .stream-title {
+display: none;    
+}
+td > a .stream-title {
+display: none;    
+}
+table > tbody > tr.training-row.no-public.no-children > td > a > div{
+display: none;    
+}
+
+.has-children td > a div {
+display: none;    
+}
+
+
+.page-header h1 {
+    font-family: 'Felidae';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 54px;
+    color: #ffffff;
+    max-width: 80%;
+}
+/* ===============================
+   Баннер
+================================ */
+
+.custom-banner {
+margin-top: 30px ;    
+}
+.logo-link img {
+display: none !important;    
+}
+
+.breadcrumbs a {    
+font-family: 'Futura PT';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 23px;
+color: #ffffff;
+}
+.breadcrumbs a:hover  {
+text-decoration: none !important;   
+}
+.breadcrumbs a:after{ /* Стрелка слева для мини меню возврата назад "< тренинги" */
+content: "";
+display: inline-block; /* Позволяет задать размеры для псевдоэлемента */
+width: 15px; /* Ширина изображения */
+height: 15px; /* Высота изображения */
+mask: url('https://static.tildacdn.com/tild3236-3233-4137-b865-626135396466/Arrow_10.svg') no-repeat center;
+background-color: #FFFFFF; /* Тот самый "цвет" SVG */
+background-size: contain; /* Масштабирует изображение, чтобы оно полностью помещалось в элемент */
+margin-left: 5px; /* Отступ слева от псевдоэлемента */
+transform: scale(1.4) rotate(180deg);
+position: relative;
+top: 3px;
+transition: transform 0.5s ease;
+}
+.breadcrumbs a:hover:after{ /* Стрелка слева для мини меню возврата назад "< тренинги" */
+content: "";
+display: inline-block; /* Позволяет задать размеры для псевдоэлемента */
+width: 15px; /* Ширина изображения */
+height: 15px; /* Высота изображения */
+mask: url('https://static.tildacdn.com/tild3236-3233-4137-b865-626135396466/Arrow_10.svg') no-repeat center;
+background-color: #FFFFFF; /* Тот самый "цвет" SVG */
+background-size: contain; /* Масштабирует изображение, чтобы оно полностью помещалось в элемент */
+margin-left: 5px; /* Отступ слева от псевдоэлемента */
+transform: scale(1.4) rotate(180deg) translateX(-5px);
+position: relative;
+top: 3px;
+}
+
+
+.page-menu {
+display: none; 
+}
+.content-menu {
+display: none;     
 }
