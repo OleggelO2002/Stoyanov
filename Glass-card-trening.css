@@ -5,6 +5,17 @@
   margin-left:0!important;
 }
 
+
+#xdget316346 > div > div > table > tbody > tr:nth-child(1) > td > div > a > span{
+color: #FA99F0;    
+}
+tr.training-row[data-training-id="934374409"] .stream-title {
+  color: #F0461A;
+}
+tr.training-row[data-training-id="417081198"] .stream-title {
+  color: #DDED59;D199FA
+}
+
 .redesigned-notice-notice {
 display: none !important;    
 }
