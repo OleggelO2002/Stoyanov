@@ -5,6 +5,10 @@
   margin-left:0!important;
 }
 
+.redesigned-notice-notice {
+display: none !important;    
+}
+
 /* Задаем флекс таблице с карточками */
 .stream-table tbody {
   display:flex;
