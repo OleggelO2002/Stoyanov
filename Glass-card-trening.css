@@ -1,0 +1,139 @@
+/* Убираем ненужный отступ */
+.stream-table { 
+  margin-left:0!important;
+}
+
+/* Задаем флекс таблице с карточками */
+.stream-table tbody {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+/* Настраиваем оболочку карточек */
+.stream-table tbody tr {
+  position:relative;
+  flex:0 0 calc(50% - 20px);
+}
+
+/* Адаптируем карточки под разные разрешения */
+@media (max-width:1200px) {
+  .stream-table tbody tr {
+    flex:0 0 calc(50% - 20px);
+      
+  }
+}
+
+@media (max-width:1000px) {
+  .stream-table tbody tr {
+    flex:0 0 calc(50% - 20px);
+  }
+}
+
+@media (max-width:850px) {
+  .stream-table tbody tr {
+    flex:0 0 calc(50% - 20px);
+  }
+}
+
+@media (max-width:510px) {
+  .stream-table tbody tr {
+      flex:0 0 100%;
+
+  }
+}
+
+/* Настраиваем кликабельность карточек */
+
+
+/* Настраиваем флекс для содержимого карточек */
+.stream-table tbody tr td {
+  position:relative;
+  display:flex;
+  height:100%;
+  width:100%;
+  padding:0!important;
+}
+
+body{
+background-image: url("https://static.tildacdn.pub/tild6263-6433-4038-b663-393038303065/2.png") !important;
+}
+
+#searchWrapper {
+ background: #202121 !important;   
+}
+/* ===============================
+   Основной блок
+================================ */
+.stream-table tr td:hover{
+background: transparent !important;
+}
+
+
+/* CSS: стекло с blur, обводка, нестандартная форма */
+.glass-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 400px !important;  /* под размер карточки */
+  height: 321px !important;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  /* Стекло */
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+
+
+  /* Нестандартная форма через SVG mask */
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 397 321" xmlns="http://www.w3.org/2000/svg"><path d="M1.48438 16.327 C1.48438 8.12962 8.12963 1.48438 16.327 1.48438 H164.058 C168.703 1.48438 173.081 3.65924 175.887 7.36134 L193.694 30.856 C196.5 34.5581 200.878 36.7329 205.523 36.7329 H379.971 C388.168 36.7329 394.813 43.3782 394.813 51.5755 V304.642 C394.813 312.839 388.168 319.484 379.971 319.484 H16.327 C8.12962 319.484 1.48438 312.839 1.48438 304.642 V16.327 Z" fill="white"/></svg>');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+  mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 397 321" xmlns="http://www.w3.org/2000/svg"><path d="M1.48438 16.327 C1.48438 8.12962 8.12963 1.48438 16.327 1.48438 H164.058 C168.703 1.48438 173.081 3.65924 175.887 7.36134 L193.694 30.856 C196.5 34.5581 200.878 36.7329 205.523 36.7329 H379.971 C388.168 36.7329 394.813 43.3782 394.813 51.5755 V304.642 C394.813 312.839 388.168 319.484 379.971 319.484 H16.327 C8.12962 319.484 1.48438 312.839 1.48438 304.642 V16.327 Z" fill="white"/></svg>');
+  mask-repeat: no-repeat;
+  mask-size: cover;
+
+  
+
+  z-index: 5;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+
+  background-image: url('https://static.tildacdn.pub/tild6237-6265-4561-a364-663461656363/Vector.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+
+  pointer-events: none;
+  z-index: 600 !important;
+}
+
+.training-row td a {
+    width: 100%;
+    max-width: 400px !important;  /* под размер карточки */
+    height: 321px !important;     /* под размер Figma */  
+}
+.glass-card a {
+  text-decoration: none;
+  color: white;
+}
+
+.glass-card .stream-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.glass-card .subtitle {
+  font-size: 14px;
+  opacity: 0.85;
+  margin-top: 4px;
+}
