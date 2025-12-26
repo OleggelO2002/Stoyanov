@@ -283,7 +283,7 @@ height: 66px !important;
 .gc-account-user-menu .menu-item {
     width: 240px;
     height: 66px;
-    background: linear-gradient(107.81deg, #2F216C -29.24%, #5F3ECF 25.35%, #5F3ECF 52.98%, #2F216C 107.57%) !important;
+    background: #202121 !important;
     box-shadow: 0px 0px 98px rgba(0, 0, 0, 0.07);
     border-radius: 10px;
     margin: 10px auto;
@@ -333,17 +333,17 @@ height: 66px !important;
 /* === КНОПКА СВЕРНУТЬ/РАЗВЕРНУТЬ МЕНЮ === */
 .gc-account-user-menu .collapse-toggle {
     cursor: pointer;
-    background-color: linear-gradient(107.81deg, #2F216C -29.24%, #5F3ECF 25.35%, #5F3ECF 52.98%, #2F216C 107.57%);
+    background-color: #202121;
     justify-content: center;
 }
 
 .gc-account-user-menu .collapse-toggle:hover {
-    background-color: linear-gradient(107.81deg, #2F216C -29.24%, #5F3ECF 25.35%, #5F3ECF 52.98%, #2F216C 107.57%);
+    background-color: #202121;
 }
 
 /* === АКТИВНЫЙ ПУНКТ МЕНЮ === */
 .gc-account-user-menu .menu-item.active {
-    background-color: linear-gradient(107.81deg, #2F216C -29.24%, #5F3ECF 25.35%, #5F3ECF 52.98%, #2F216C 107.57%) !important;
+    background-color: #202121 !important;
     box-shadow: inset 0 0 0 2px #0066cc;
 }
 
@@ -542,7 +542,7 @@ border-radius: 1000px;
 /*______________________________________*/
 /*основа меню*/
 /.gc-account-leftbar .gc-account-user-menu li a:hover{
-/background: linear-gradient(107.81deg, #2F216C -29.24%, #5F3ECF 25.35%, #5F3ECF 52.98%, #2F216C 107.57%);
+/background: #202121;
 box-shadow: inset -4px 0px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset 4px 0px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -555,7 +555,7 @@ background: #ffffff !important;
 }
 
 .gc-account-leftbar .gc-account-user-menu li a{
-  background: linear-gradient(107.81deg, #2F216C -29.24%, #5F3ECF 25.35%, #5F3ECF 52.98%, #2F216C 107.57%);
+  background: #202121;
   width: 240px;
   border-radius: 10px;
   height: 66px;
@@ -563,17 +563,17 @@ background: #ffffff !important;
   align-items: flex-start;
 }
 .select > a {
-background: linear-gradient(107.81deg, #2F216C -29.24%, #5F3ECF 25.35%, #5F3ECF 52.98%, #2F216C 107.57%) !important;      
+background: #202121 !important;      
 }
 .menu-item.active > a {
-background: linear-gradient(107.81deg, #2F216C -29.24%, #5F3ECF 25.35%, #5F3ECF 52.98%, #2F216C 107.57%) !important;      
+background:  #202121 !important;      
 }
 .custom-submenu .subitem-link {
 background: transparent !important; 
 color: #FFF !important;
 }
 .selected > a {
-background: linear-gradient(107.81deg, #2F216C -29.24%, #5F3ECF 25.35%, #5F3ECF 52.98%, #2F216C 107.57%) !important;      
+background: #202121 !important;      
 }    
 
 .menu-item a[title]::after {
@@ -658,7 +658,7 @@ display: block !important;
     border-radius: 5px;
 }
 .custom-submenu li:hover {
-background: linear-gradient(107.81deg, #2F216C -29.24%, #5F3ECF 25.35%, #5F3ECF 52.98%, #2F216C 107.57%) !important;
+background: #202121 !important;
 }
 .custom-submenu a {
     font-size: 12px; /* Уменьшаем размер текста */
@@ -683,7 +683,7 @@ display: none;
 }
 /* Цвет при наведении */
 .select > a:hover {
-background: linear-gradient(107.81deg, #2F216C -29.24%, #5F3ECF 25.35%, #5F3ECF 52.98%, #2F216C 107.57%) !important;   
+background: #202121 !important;   
 }
 /* Настройка уведомлений */
 .select > a > .notify-count {
