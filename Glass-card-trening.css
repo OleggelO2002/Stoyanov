@@ -88,8 +88,11 @@ background-image: url("https://static.tildacdn.pub/tild6131-6136-4364-b534-37666
 ================================ */
 .stream-table tr td:hover{
 background: transparent !important;
+transform: translateY(-10px);
 }
-
+.stream-table tr td{
+transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
 
 /* CSS: стекло с blur, обводка, нестандартная форма */
 .glass-card {
