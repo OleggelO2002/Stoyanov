@@ -5,6 +5,9 @@
   margin-left:0!important;
 }
 
+.no-children td > a div {
+display: none;   
+}
 
 #xdget316346 > div > div > table > tbody > tr:nth-child(1) > td > div > a > span{
 color: #FA99F0;    
@@ -246,14 +249,6 @@ position: relative;
 top: 3px;
 }
 
-
-.page-menu {
-display: none; 
-}
-.content-menu {
-display: none;     
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 
 @font-face {
@@ -461,6 +456,3 @@ font-size: 13px;
 color: #d3d2d2;    
 }
 
-.chat-list .chat-item {
-display: none;      
-}
