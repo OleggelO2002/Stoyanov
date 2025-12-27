@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function ()  {
   // ====== СОЗДАЁМ БАННЕР ======
   const img = document.createElement('img');
   const isMobile = window.innerWidth <= 768;
