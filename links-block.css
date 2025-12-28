@@ -1,1 +1,41 @@
+.useful-link-img {
+width: 40px !important;    
+}
+.useful-links-block {
+background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box, linear-gradient(180deg, #ffffff 0%, #2A2544 100%);
+border: 1px solid rgb(238, 238, 238);
+margin-top: 20px;
+padding: 20px;
+border-radius: 15px !important;
+padding-top: 10px !important;
+}
+
+.useful-links-header {
+font-weight: 600;
+font-size: 23px;
+line-height: 36px;
+color: #FFFFFF;  
+margin-bottom: 20px !important;  
+}
+
+.useful-link-text {
+font-weight: 600;
+font-size: 15px;
+line-height: 14px;
+text-align: center;
+color: #FFFFFF;
+margin-bottom: 10px !important;
+}
+
+div.useful-links-block > a.useful-link-item {
+    text-decoration: none !important;
+}
+
+.useful-link-divider{
+margin-bottom: 20px !important;   
+}
+
+.useful-link-text {
+margin-left: 10px;    
+}
 
