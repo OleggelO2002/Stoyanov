@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function ()  {
   setTimeout(() => {
     const maxChecks = 30; // 3000ms / 100ms
     let checkCount = 0;
