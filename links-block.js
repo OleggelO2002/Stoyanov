@@ -33,7 +33,6 @@
 
         const img = document.createElement('img');
         img.src = link.img;
-        img.alt = link.text;
         img.className = 'useful-link-img';
 
         const text = document.createElement('span');
