@@ -316,7 +316,7 @@ height: 66px !important;
 /* === УВЕДОМЛЕНИЯ === */
 .gc-account-user-menu .menu-item .notify-count {
     background-color: #ff3b30;
-    color: #5538BA;
+    color: #ff3b30;
     font-size: 12px;
     font-weight: bold;
     min-width: 20px;
