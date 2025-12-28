@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // Проверка, чтобы календарь вставлялся только один раз
+  if (window.calendarInserted) return;
+  window.calendarInserted = true;
+
   let attempts = 0;
   const maxAttempts = 10;
 
@@ -65,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const dateText = dateLabel.textContent.trim().replace(/\s+/g, ' ');
 
       records.forEach(record => {
+        if (record.querySelector('.calendar-btn')) return; // предотвращаем дубли
         const timeEl = record.querySelector('.time');
         const eventEl = record.querySelector('.event');
         const eventLink = eventEl?.querySelector('a');
@@ -93,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const eventDayOnly = new Date(eventDate);
         eventDayOnly.setHours(0, 0, 0, 0);
 
-        if (eventDayOnly >= today && !record.querySelector('.calendar-btn')) {
+        if (eventDayOnly >= today) {
           const btn = document.createElement('button');
           btn.textContent = 'Добавить в календарь';
           btn.className = 'calendar-btn';
@@ -107,75 +112,72 @@ document.addEventListener('DOMContentLoaded', function () {
           btn.style.cursor = 'pointer';
 
           btn.addEventListener('click', function () {
-            const [h, m] = timeText.split(':');
-            const pad = n => n.toString().padStart(2, '0');
-            const y = eventDate.getFullYear();
-            const mo = pad(eventDate.getMonth() + 1);
-            const d = pad(eventDate.getDate());
-            const start = `${y}${mo}${d}T${pad(h)}${pad(m)}00`;
-            const endHourNum = Number(h) + 1;
-            const endHour = pad(endHourNum);
-            const end = `${y}${mo}${d}T${endHour}${pad(m)}00`;
-
-            // 🌍 Получаем текущий часовой пояс пользователя
-            const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-            const ua = navigator.userAgent || navigator.vendor || window.opera;
-            const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
-            const isSafari = /^((?!chrome|android).)*safari/i.test(ua);
-
-            const isChatiumApp = document.body.classList.contains('chatium_body');
-            const hasGcAccountLeftbar = document.querySelector('.gc-account-leftbar');
-            const isAppEnvironment = isChatiumApp || !hasGcAccountLeftbar;
-
-            function openGoogleCalendar() {
-              const calendarUrl = new URL('https://calendar.google.com/calendar/render');
-              calendarUrl.searchParams.set('action', 'TEMPLATE');
-              calendarUrl.searchParams.set('text', eventTitle);
-              calendarUrl.searchParams.set('details', eventDesc);
-              calendarUrl.searchParams.set('dates', `${start}/${end}`);
-              calendarUrl.searchParams.set('ctz', userTimeZone);
-              window.open(calendarUrl.toString(), '_blank');
-            }
-
-            function openAppleCalendar() {
-              const icsContent = [
-                "BEGIN:VCALENDAR",
-                "VERSION:2.0",
-                "BEGIN:VEVENT",
-                `SUMMARY:${eventTitle}`,
-                `DESCRIPTION:${eventDesc}`,
-                `DTSTART;TZID=${userTimeZone}:${start}`,
-                `DTEND;TZID=${userTimeZone}:${end}`,
-                "END:VEVENT",
-                "END:VCALENDAR"
-              ].join("\n");
-
-              const blob = new Blob([icsContent], { type: 'text/calendar' });
-              const url = URL.createObjectURL(blob);
-              const a = document.createElement('a');
-              a.href = url;
-              a.download = `${eventTitle}.ics`;
-              document.body.appendChild(a);
-              a.click();
-              document.body.removeChild(a);
-              URL.revokeObjectURL(url);
-            }
-
-            if (isSafari) {
-              showCalendarChoicePopup({
-                onGoogle: openGoogleCalendar,
-                onApple: openAppleCalendar,
-              });
-            } else {
-              openGoogleCalendar();
-            }
+            addToCalendar(eventTitle, eventDesc, timeText, eventDate);
           });
 
           record.appendChild(btn);
         }
       });
     });
+  }
+
+  function addToCalendar(eventTitle, eventDesc, timeText, eventDate) {
+    const [h, m] = timeText.split(':');
+    const pad = n => n.toString().padStart(2, '0');
+    const y = eventDate.getFullYear();
+    const mo = pad(eventDate.getMonth() + 1);
+    const d = pad(eventDate.getDate());
+    const start = `${y}${mo}${d}T${pad(h)}${pad(m)}00`;
+    const endHourNum = Number(h) + 1;
+    const endHour = pad(endHourNum);
+    const end = `${y}${mo}${d}T${endHour}${pad(m)}00`;
+
+    const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    const isSafari = /^((?!chrome|android).)*safari/i.test(ua);
+
+    function openGoogleCalendar() {
+      const calendarUrl = new URL('https://calendar.google.com/calendar/render');
+      calendarUrl.searchParams.set('action', 'TEMPLATE');
+      calendarUrl.searchParams.set('text', eventTitle);
+      calendarUrl.searchParams.set('details', eventDesc);
+      calendarUrl.searchParams.set('dates', `${start}/${end}`);
+      calendarUrl.searchParams.set('ctz', userTimeZone);
+      window.open(calendarUrl.toString(), '_blank');
+    }
+
+    function openAppleCalendar() {
+      const icsContent = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "BEGIN:VEVENT",
+        `SUMMARY:${eventTitle}`,
+        `DESCRIPTION:${eventDesc}`,
+        `DTSTART;TZID=${userTimeZone}:${start}`,
+        `DTEND;TZID=${userTimeZone}:${end}`,
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\n");
+
+      const blob = new Blob([icsContent], { type: 'text/calendar' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${eventTitle}.ics`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    if (isSafari) {
+      showCalendarChoicePopup({
+        onGoogle: openGoogleCalendar,
+        onApple: openAppleCalendar,
+      });
+    } else {
+      openGoogleCalendar();
+    }
   }
 
   function showCalendarChoicePopup({ onGoogle, onApple }) {
@@ -195,18 +197,11 @@ document.addEventListener('DOMContentLoaded', function () {
     overlay.appendChild(popup);
     document.body.appendChild(overlay);
 
-    popup.querySelector('.google-btn').addEventListener('click', () => {
-      onGoogle();
-      closePopup();
-    });
-    popup.querySelector('.apple-btn').addEventListener('click', () => {
-      onApple();
-      closePopup();
-    });
+    popup.querySelector('.google-btn').addEventListener('click', () => { onGoogle(); closePopup(); });
+    popup.querySelector('.apple-btn').addEventListener('click', () => { onApple(); closePopup(); });
     popup.querySelector('.calendar-choice-close').addEventListener('click', closePopup);
 
-    function closePopup() {
-      document.body.removeChild(overlay);
-    }
+    function closePopup() { document.body.removeChild(overlay); }
   }
+
 });
