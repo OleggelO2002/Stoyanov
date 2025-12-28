@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function ()  {
             const rawText = rawBlock.textContent.trim();
             console.log('Извлечённый текст:', rawText);
 
-            const urlMatch = rawText.match(/https:\/\/school\.astrolog-liliya\.ru\/pl\/teach\/control\/lesson\/view\?id=\d+/);
+            const urlMatch = rawText.match(/https:\/\/academy\.business-stoyanov\.com\/pl\/teach\/control\/lesson\/view\?id=\d+/);
             const titleMatch = rawText.match(/^(.*?)(?=\s*https:\/\/)/);
 
             if (!urlMatch || !titleMatch) {
