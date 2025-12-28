@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 
 :root {
-  --bg-last-lesson-main: /*ТУТ ФОН ПОСЛЕДНЕГО УРОКА*/;
-  --color-last-lesson-titel: /*ТУТ ЦВЕТ ЗАГОЛОВКА "вы остановились на уроке:" ПОСЛЕДНЕГО УРОКА*/;
-  --color-last-lesson-name: /*ТУТ ЦВЕТ ГЛАВНОГО ТЕКСТА "НАЗВАНИЕ УРОКА" ПОСЛЕДНЕГО УРОКА*/;
+  --bg-last-lesson-main: linear-gradient(var(--card-bg), var(--card-bg)) padding-box, linear-gradient(180deg, #ffffff 0%, #2A2544 100%);  /*ТУТ ФОН ПОСЛЕДНЕГО УРОКА*/
+  --color-last-lesson-titel: #717171 !important /*ТУТ ЦВЕТ ЗАГОЛОВКА "вы остановились на уроке:" ПОСЛЕДНЕГО УРОКА*/;
+  --color-last-lesson-name: #fff !important /*ТУТ ЦВЕТ ГЛАВНОГО ТЕКСТА "НАЗВАНИЕ УРОКА" ПОСЛЕДНЕГО УРОКА*/;
   --bg-last-lesson-button: /*ТУТ ФОН КНОПКИ ПОСЛЕДНЕГО УРОКА*/;
   --bg-last-lesson-button-hover: /*ТУТ ФОН КНОПКИ ПОСЛЕДНЕГО УРОКА ПРИ НАВЕДЕНИИ*/;
-  --color-last-lesson-button: /*ТУТ ЦВЕТ ТЕКСТА КНОПКИ "перейти" ПОСЛЕДНЕГО УРОКА*/;
+  --color-last-lesson-button: #fff !important/*ТУТ ЦВЕТ ТЕКСТА КНОПКИ "перейти" ПОСЛЕДНЕГО УРОКА*/;
 }
 
 .col-md-4{
@@ -55,4 +55,23 @@ transition: background 0.2s ease !important;
 .lastLessonBlock .lesson-btn:hover{
 background:  var(--bg-last-lesson-button-hover);
 text-decoration: none;
+}
+
+.lesson-btn:after {
+    content: "";
+    display: inline-block;
+    width: 54px;
+    height: 13px;
+    mask: url(https://static.tildacdn.pub/tild3539-3865-4466-a262-346466333732/Arrow_16.svg) no-repeat center;
+    background-color: #FFFFFF;
+    background-size: contain;
+    margin-left: 5px;
+    transform: scale(0.7); 
+    position: relative;
+    top: 3px;
+    transition: transform 0.5s ease;
+}
+
+.lesson-btn:hover:after {
+  transform: scale(0.7) translateX(15px);
 }
