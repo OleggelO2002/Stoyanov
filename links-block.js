@@ -20,8 +20,8 @@
       linksBlock.appendChild(header);
 
       const links = [
-        { img: 'https://example.com/telegram.png', text: 'Telegram канал', href: 'https://t.me/example' },
-        { img: 'https://example.com/instagram.png', text: 'Instagram', href: 'https://instagram.com/example' },
+        { img: 'https://static.tildacdn.pub/tild3039-6635-4232-b935-336233343336/Mask_group.png', text: 'Telegram канал', href: 'https://t.me/example' },
+        { img: 'https://static.tildacdn.pub/tild6637-6163-4336-b134-646664386463/Mask_group-1.png', text: 'Instagram', href: 'https://instagram.com/example' },
         // Добавляйте новые ссылки сюда
       ];
 
