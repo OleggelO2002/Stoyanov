@@ -7,6 +7,13 @@ margin-left: -20px !important;
 margin-left: 0px !important;
 }
 }
+body{
+background: #131313 !important;
+background-image: none !important;
+}
+.no-tags {
+color: #fff !important;    
+}
 
 @media screen and (max-width: 768px) {
 .xdget-training .lesson-list li{
@@ -21,6 +28,22 @@ margin-right: -15px;
 margin-right: 0px !important;
 margin-left: 0px !important;
 }
+}
+
+.logo-text {
+display: none;    
+}
+
+.menu-item-label {
+opacity: 0 !important;    
+}
+
+.collapsed .menu-item-notifications a {
+width: 66px !important;     
+}
+
+.gc-account-leftbar .notify-count.with-label{
+top: 12px !important;    
 }
 
 /*========== ИСПРАВИТЬ ВРЕМЕННОЕ ==========*/
@@ -49,9 +72,7 @@ display: none;
 .container{
 margin-left: 5% !important;    
 }
-body {
-background: #FAFAFA;   
-}
+
 
 /*========== Оформление списка уроков ==========*/
 [class*="lesson-id-"] {
@@ -59,14 +80,14 @@ display: block !important;
 background: #fff;
 filter: drop-shadow(0px 0px 18.5px rgba(0, 0, 0, 0.07));
 border-radius: 15px !important ;
-background-image: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20854%20262%22%20fill%3D%22none%22%20xmlns%3D%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M2%20233.109C85.363%20251.051%20288.375%20304.177%20471.606%20191.742C654.838%2079.3073%20804.056%20112.169%20851%20165.329%22%20stroke%3D%22%23D5BAAF%22/%3E%3Cpath%20d%3D%22M1%20211.416C97%20201.916%20321.7%20142.714%20500.5%2041.9138C679.3%20-58.8862%20814.333%2050.9156%20853.5%20110.916%22%20stroke%3D%22%23D5BAAF%22/%3E%3Cpath%20d%3D%22M2%20225.73C70.4434%20235.083%20310.58%20257.607%20467.597%20152.983C624.614%2048.3588%20767.291%2079.4164%20851%20123.01%22%20stroke%3D%22%23D5BAAF%22/%3E%3C/svg%3E");
+background-image: url("https://static.tildacdn.pub/tild6261-3833-4235-b963-326635656634/Frame_381.png");
 background-repeat: no-repeat;
 background-position: center calc(100% + 10px);
-background-size: 100% auto !important;
 min-height: 155px !important;
 margin-bottom: 30px;
 height: auto !important; /* обязательно! */
 transition: transform 0.3s ease, box-shadow 0.3s ease;
+margin-left: 35px !important;
 }
 [class*="lesson-id-"]:hover {
 transform: translateY(-10px);
@@ -168,15 +189,14 @@ font-style: normal;
 font-weight: 600 !important;
 font-size: 23px !important;
 line-height: 31px !important;
-color: #363636;
+color: #FFF;
 padding-top: 10px;
-text-shadow: 0px 4px 30px #FFFFFF, 0px 4px 10px #FFFFFF, 0px 4px 15px #FFFFFF, 0px 4px 20px #FFFFFF, 0px 4px 30px #FFFFFF ;    
 margin-top: 30px;
 }
 }
 .lesson-list .description {
         margin-top: 10px;
-        color: #717171;
+        color: #DCDCDC;
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 600;
@@ -286,47 +306,7 @@ content: ""; /* Пустое содержимое */
 
 
 /*========== Оформление списка тренигов !Верх! ==========*/
-.breadcrumbs a {    
-font-family: 'Futura PT';
-font-style: normal;
-font-weight: 400;
-font-size: 18px;
-line-height: 23px;
-color: #292929;
-}
-.breadcrumbs a:hover  {
-text-decoration: none !important;   
-}
-.breadcrumbs a:after{ /* Стрелка слева для мини меню возврата назад "< тренинги" */
-content: "";
-display: inline-block; /* Позволяет задать размеры для псевдоэлемента */
-width: 15px; /* Ширина изображения */
-height: 15px; /* Высота изображения */
-mask: url('https://static.tildacdn.com/tild3236-3233-4137-b865-626135396466/Arrow_10.svg') no-repeat center;
-background-color: #292929; /* Тот самый "цвет" SVG */
-background-size: contain; /* Масштабирует изображение, чтобы оно полностью помещалось в элемент */
-margin-left: 5px; /* Отступ слева от псевдоэлемента */
-transform: scale(1.4) rotate(180deg);
-position: relative;
-top: 3px;
-transition: transform 0.5s ease;
-}
-.breadcrumbs a:hover:after{ /* Стрелка слева для мини меню возврата назад "< тренинги" */
-content: "";
-display: inline-block; /* Позволяет задать размеры для псевдоэлемента */
-width: 15px; /* Ширина изображения */
-height: 15px; /* Высота изображения */
-mask: url('https://static.tildacdn.com/tild3236-3233-4137-b865-626135396466/Arrow_10.svg') no-repeat center;
-background-color: #292929; /* Тот самый "цвет" SVG */
-background-size: contain; /* Масштабирует изображение, чтобы оно полностью помещалось в элемент */
-margin-left: 5px; /* Отступ слева от псевдоэлемента */
-transform: scale(1.4) rotate(180deg) translateX(-5px);
-position: relative;
-top: 3px;
-}
-.content-menu {
-display: none;    
-}
+
 @media screen and (max-width: 768px) {
 .page-header h1{
 font-size: 20px;
