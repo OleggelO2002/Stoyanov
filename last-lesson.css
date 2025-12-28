@@ -9,6 +9,11 @@
   --color-last-lesson-button: #fff !important/*ТУТ ЦВЕТ ТЕКСТА КНОПКИ "перейти" ПОСЛЕДНЕГО УРОКА*/;
 }
 
+.lesson-btn {
+padding-left: 0px !important;
+color: #fff !important;   
+}
+
 .col-md-4{
 padding-left: 0px !important;
 }
