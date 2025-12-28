@@ -1,5 +1,8 @@
-// JS: создаём стеклянные карточки поверх существующих <tr>
 function createGlassCards() {
+  // ====== Проверка, чтобы стеклянные карточки создавались только один раз ======
+  if (window.glassCardsInserted) return;
+  window.glassCardsInserted = true;
+
   const rows = document.querySelectorAll('tr.training-row');
 
   rows.forEach(row => {
@@ -8,6 +11,9 @@ function createGlassCards() {
 
     const link = td.querySelector('a');
     if (!link) return;
+
+    // ====== Проверяем, есть ли уже стеклянная карточка ======
+    if (td.querySelector('.glass-card')) return;
 
     // Создаём новый блок стекла
     const glassBlock = document.createElement('div');
@@ -31,5 +37,6 @@ function createGlassCards() {
   });
 }
 
-// Запускаем после загрузки страницы
+// Запускаем после полной загрузки страницы
 window.addEventListener('load', createGlassCards);
+
