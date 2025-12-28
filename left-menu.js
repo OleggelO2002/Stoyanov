@@ -1,14 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const leftBar = document.querySelector(".gc-account-leftbar");
-    const toggleBtn = document.createElement("li");
+  // ====== Проверка, чтобы меню вставлялось только один раз ======
+  if (window.leftMenuInserted) return;
+  window.leftMenuInserted = true;
 
-    toggleBtn.classList.add("menu-item", "collapse-toggle");
-    toggleBtn.innerHTML = `
-        <a href="javascript:void(0)" title="Свернуть меню">
-            <img class="menu-item-icon" src="/public/img/service/collapse.png" alt="Toggle">
-        </a>
-    `;
+  const leftBar = document.querySelector(".gc-account-leftbar");
+  if (!leftBar) return;
 
+  // ====== Создаём кнопку сворачивания ======
+  const toggleBtn = document.createElement("li");
+  toggleBtn.classList.add("menu-item", "collapse-toggle");
+  toggleBtn.innerHTML = `
+      <a href="javascript:void(0)" title="Свернуть меню">
+          <img class="menu-item-icon" src="/public/img/service/collapse.png" alt="Toggle">
+      </a>
+  `;
+    
     const menu = document.querySelector(".gc-account-user-menu");
     if (menu) {
         menu.appendChild(toggleBtn);
@@ -174,6 +180,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
+  // ====== Проверка, чтобы observer вставлялся только один раз ======
+  if (window.userMenuObserverInserted) return;
+  window.userMenuObserverInserted = true;
+
   // Наблюдаем за изменениями в DOM
   const observer = new MutationObserver(function (mutationsList) {
     for (const mutation of mutationsList) {
@@ -181,7 +191,6 @@ document.addEventListener("DOMContentLoaded", function () {
         // Проверяем, появились ли нужные элементы
         const profileElement = document.querySelector(".gc-account-user-submenu-bar-profile");
         const notificationsElement = document.querySelector(".gc-account-user-submenu-bar-notifications_button_small");
-
         if (profileElement && !profileElement.querySelector(".close-button")) {
           // Добавляем крестик к элементу profile
           addCloseButton(profileElement);
