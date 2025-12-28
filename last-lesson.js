@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', function ()  {
+  // Защита от повторного добавления
+  if (window.lastLessonInserted) return;
+  window.lastLessonInserted = true;
+
   setTimeout(() => {
     const maxChecks = 30; // 3000ms / 100ms
     let checkCount = 0;
@@ -6,18 +10,15 @@ document.addEventListener('DOMContentLoaded', function ()  {
     const intervalId = setInterval(() => {
       checkCount++;
 
-      // Проверка, например, что нужный блок уже есть на странице
       const scheduleBlock = document.querySelector('.xdget-lessonSchedule');
       if (scheduleBlock) {
-        clearInterval(intervalId); // Останавливаем, если элемент найден
+        clearInterval(intervalId);
 
-         const url = `${window.location.origin}/last-lesson-out`;
+        const url = `${window.location.origin}/last-lesson-out`;
 
         fetch(url)
           .then(response => {
-            if (!response.ok) {
-              throw new Error(`Ошибка загрузки страницы: ${response.statusText}`);
-            }
+            if (!response.ok) throw new Error(`Ошибка загрузки страницы: ${response.statusText}`);
             return response.text();
           })
           .then(html => {
@@ -25,10 +26,7 @@ document.addEventListener('DOMContentLoaded', function ()  {
             tempDiv.innerHTML = html;
 
             const rawBlock = tempDiv.querySelector('.last-lesson-out');
-            if (!rawBlock) {
-              console.log('Блок с классом .last-lesson-out не найден');
-              return;
-            }
+            if (!rawBlock) return console.log('Блок с классом .last-lesson-out не найден');
 
             const rawText = rawBlock.textContent.trim();
             console.log('Извлечённый текст:', rawText);
@@ -36,10 +34,7 @@ document.addEventListener('DOMContentLoaded', function ()  {
             const urlMatch = rawText.match(/https:\/\/academy\.business-stoyanov\.com\/pl\/teach\/control\/lesson\/view\?id=\d+/);
             const titleMatch = rawText.match(/^(.*?)(?=\s*https:\/\/)/);
 
-            if (!urlMatch || !titleMatch) {
-              console.log('Не удалось найти ссылку или заголовок');
-              return;
-            }
+            if (!urlMatch || !titleMatch) return console.log('Не удалось найти ссылку или заголовок');
 
             const lessonUrl = urlMatch[0];
             const lessonTitle = titleMatch[0].trim();
@@ -70,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function ()  {
       }
 
       if (checkCount >= maxChecks) {
-        clearInterval(intervalId); // Прекращаем попытки после 3 секунд
+        clearInterval(intervalId);
         console.log('Не удалось найти .xdget-lessonSchedule в течение 3 секунд');
       }
     }, 100);
