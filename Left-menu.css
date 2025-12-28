@@ -23,6 +23,10 @@
 }
 
 
+.gc-account-leftbar .gc-account-user-menu li a:hover {
+    background-color: #B73817;
+}
+
 .confirm-email-popup-form {
 color: #000 !important;
 }
