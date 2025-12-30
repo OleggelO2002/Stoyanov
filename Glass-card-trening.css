@@ -179,7 +179,11 @@ line-height: 20px;
 color: #FFF;
 text-shadow: 0px 0px 24px #000000;
 }
-
+@media screen and (min-width: 768px) {
+.glass-card .stream-title {
+top: 30%;
+}
+}
 .glass-card .subtitle {
 position: relative !important;
 top: 20%;  
