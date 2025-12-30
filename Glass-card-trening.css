@@ -171,7 +171,7 @@ transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 
 .glass-card .stream-title {
 position: relative !important;
-top: 20%;
+top: 20% !important;
 font-style: normal;
 font-weight: 800;
 font-size: 26px;
@@ -181,7 +181,7 @@ text-shadow: 0px 0px 24px #000000;
 }
 @media screen and (min-width: 768px) {
 .glass-card .stream-title {
-top: 30%;
+top: 30% !important;
 }
 }
 .glass-card .subtitle {
