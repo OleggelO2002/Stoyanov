@@ -48,7 +48,7 @@ color: #FFF !important;
 color: #000 !important;
 }
 .lesson-description-value{
-color: #FFF !important;
+color: #000000 !important;
 }
 .block-box{
 background-color: transparent !important;    
@@ -91,10 +91,7 @@ margin-left: 30px !important;
 }
 }
 .gc-main-content {
-    background-image: url('https://static.tildacdn.com/tild3664-3235-4434-b964-313339626163/lilia_gaevaya_v2_les.png') !important;
-    background-repeat: repeat-y !important; /* повтор по вертикали */
-    background-position: center top !important; /* выравнивание по центру */
-    background-size: 100% auto !important; /* ширина растянута, высота — авто */
+    background: #131313 !important;
 }
 
 body.chatium_body{
@@ -251,7 +248,7 @@ border-bottom: 0px !important;
 @media (max-width: 768px) {
     .lesson-header-block.row-section {
     border-radius: 10px;
-    background-image: url('https://static.tildacdn.com/tild3633-6538-4164-b161-316537666666/Frame_321.png') !important;
+    background-image: url('https://static.tildacdn.pub/tild3734-3164-4132-b135-646363336662/Frame_387.png') !important;
     background-repeat: no-repeat !important;
     background-position: center center !important;
     background-size: cover !important; /* вот здесь вместо 100% auto */
@@ -259,7 +256,7 @@ border-bottom: 0px !important;
 }
 @media (min-width: 768px) {
     .lesson-header-block.row-section {
-        background-image: url('https://static.tildacdn.com/tild6362-3264-4237-a239-393464633239/Frame_317.png') !important;
+        background-image: url('https://static.tildacdn.pub/tild6165-3334-4534-a331-616239643864/Frame_378.png') !important;
         background-repeat: no-repeat !important;
         background-position: center center !important;
         background-size: cover !important; /* вот здесь вместо 100% auto */
@@ -297,7 +294,7 @@ font-weight: 400 !important;
 font-size: 35px !important;
 text-align: center !important;
 text-transform: uppercase !important;
-color: #FFFFFF !important;  
+color: #000000 !important;  
 }
 }
 @media (max-width: 768px) {
@@ -309,7 +306,7 @@ font-weight: 400 !important;
 font-size: 16px !important;
 text-align: center !important;
 text-transform: uppercase !important;
-color: #FFFFFF !important;  
+color: #000000 !important;  
 }  
 }
 .lesson-header-block.row-section {
