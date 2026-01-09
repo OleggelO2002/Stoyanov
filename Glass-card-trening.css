@@ -103,10 +103,10 @@ background-image: url("https://static.tildacdn.pub/tild6131-6136-4364-b534-37666
 }
 @media screen and (max-width: 768px) {
 body{
-background-image: url("https://static.tildacdn.pub/tild6432-6336-4336-a437-373931663834/Slide_16_9_-_5.png") !important;
+background-image: url("https://static.tildacdn.pub/tild3336-3465-4234-a235-363364646135/Slide_16_9_-_5.png") !important;
 background-size: cover;        /* Масштабирует фон, чтобы покрыть весь экран */
 background-position: center;   /* Центрирует фон по экрану */
-background-repeat: no-repeat;  
+background-repeat: repeat;  
 }  
 }
 
