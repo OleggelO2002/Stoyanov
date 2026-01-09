@@ -12,6 +12,13 @@ display: none;
 opacity: 0 !important;    
 }
 
+.lesson-date {
+color: #F0461A !important    
+}
+.lesson-list li .title {
+color: #FFF !important    
+}
+
 .collapsed .menu-item-notifications a {
 width: 66px !important;     
 }
