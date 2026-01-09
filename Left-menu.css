@@ -22,6 +22,9 @@
   font-display: swap;
 }
 
+.gc-account-leftbar .gc-account-user-menu li.menu-item-notifications .notify-count {
+    background: #FFF;
+}
 /* прячем стандартную иконку */
 .toggle-link img {
     display: none;
