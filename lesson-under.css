@@ -34,6 +34,35 @@
 
 
 
+
+
+.jp-play-bar {
+background: #F0461A !important;  
+}
+
+.jp-play-bar::before {
+background: #F0461A !important;   
+}
+
+.jp-volume-bar-value {
+background: #F0461A !important;   
+}
+.jp-volume-bar-value::before {
+background: #F0461A !important;   
+}
+.selected {
+color: #F0461A !important;    
+}
+.jp-playlist-item {
+color: #F0461A !important;    
+}
+.jp-playback-rate:hover{
+color: #F0461A !important;
+}
+
+
+
+
 .text-large h2 {
 color: #FFF;    
 }
