@@ -24,6 +24,7 @@ margin-right: -15px;
 [class*=" lesson-id-"]{
 margin-right: 0px !important;
 margin-left: 0px !important;
+max-width: 100%;
 }
 }
 
