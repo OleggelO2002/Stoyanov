@@ -326,7 +326,7 @@ height: 66px !important;
 /* === ОБЩИЙ СТИЛЬ БОКОВОГО МЕНЮ === */
 .gc-account-leftbar {
     width: 240px;
-    background: transparent;
+    background: 131313;
     padding: 15px 0;
     transition: width 0.3s ease;
 }
