@@ -5,11 +5,10 @@
 
   // Селекторы контейнеров
   const desktopSelector = '.xdget-lessonSchedule';
-  const mobileSelector = '.xdget-block.col-md-4';
+  const mobileSelector = '.col-md-4';
 
   // Создание блоков
   function createLessonBlocks(lessonTitle, lessonUrl) {
-    // Последний урок
     const lessonBlock = document.createElement('div');
     lessonBlock.className = 'lastLessonBlock';
     lessonBlock.style.cssText = `
@@ -23,31 +22,18 @@
       <a href="${lessonUrl}" class="lesson-btn">Продолжить учиться</a>
     `;
 
-    // Полезные ссылки
     const linksBlock = document.createElement('div');
     linksBlock.className = 'useful-links-block';
     linksBlock.style.marginTop = '20px';
     linksBlock.innerHTML = `
       <div class="useful-links-header">Полезные ссылки:</div>
-      <a href="https://t.me/example" target="_blank" class="useful-link-item">
-        <img src="https://static.tildacdn.pub/tild3039-6635-4232-b935-336233343336/Mask_group.png" class="useful-link-img">
-        <span class="useful-link-text">Telegram канал</span>
-      </a>
+      <a href="https://t.me/example" target="_blank" class="useful-link-item">Telegram канал</a>
       <div class="useful-link-divider"></div>
-      <a href="https://instagram.com/example" target="_blank" class="useful-link-item">
-        <img src="https://static.tildacdn.pub/tild6637-6163-4336-b134-646664386463/Mask_group-1.png" class="useful-link-img">
-        <span class="useful-link-text">Instagram</span>
-      </a>
+      <a href="https://instagram.com/example" target="_blank" class="useful-link-item">Instagram</a>
       <div class="useful-link-divider"></div>
-      <a href="https://t.me/example" target="_blank" class="useful-link-item">
-        <img src="https://static.tildacdn.pub" class="useful-link-img">
-        <span class="useful-link-text">Цифровой салон будущего</span>
-      </a>
+      <a href="https://t.me/example" target="_blank" class="useful-link-item">Цифровой салон будущего</a>
       <div class="useful-link-divider"></div>
-      <a href="https://instagram.com/example" target="_blank" class="useful-link-item">
-        <img src="https://static.tildacdn.pub" class="useful-link-img">
-        <span class="useful-link-text">НКО</span>
-      </a>
+      <a href="https://instagram.com/example" target="_blank" class="useful-link-item">НКО</a>
     `;
 
     return { lessonBlock, linksBlock };
@@ -77,32 +63,31 @@
       .catch(error => console.error('Ошибка при загрузке HTML:', error));
   }
 
-  // Функция вставки блоков
+  // Функция вставки блоков внутрь контейнера
   function insertBlocks(container, lessonTitle, lessonUrl) {
+    // Защита от повторного добавления в контейнер
+    if (container.querySelector('.lastLessonBlock')) return;
     const { lessonBlock, linksBlock } = createLessonBlocks(lessonTitle, lessonUrl);
     container.appendChild(lessonBlock);
     container.appendChild(linksBlock);
     console.log('Блоки last-lesson и полезных ссылок добавлены внутрь контейнера!');
   }
 
-  // Наблюдатель за появлением контейнера
-  const observer = new MutationObserver(() => {
-    const container = document.querySelector(desktopSelector) 
-                   || document.querySelector(mobileSelector);
+  // Попробуем вставить, если контейнер уже есть
+  function tryInsert() {
+    const container = document.querySelector(desktopSelector) || document.querySelector(mobileSelector);
     if (container) {
-      observer.disconnect(); // остановить наблюдение
       fetchLessonData((title, url) => insertBlocks(container, title, url));
+      return true;
     }
-  });
-
-  observer.observe(document.body, { childList: true, subtree: true });
-
-  // На случай, если контейнер уже есть при DOMContentLoaded
-  const existingContainer = document.querySelector(desktopSelector) 
-                         || document.querySelector(mobileSelector);
-  if (existingContainer) {
-    observer.disconnect();
-    fetchLessonData((title, url) => insertBlocks(existingContainer, title, url));
+    return false;
   }
 
+  // Если контейнер ещё не появился — наблюдаем за DOM
+  if (!tryInsert()) {
+    const observer = new MutationObserver(() => {
+      if (tryInsert()) observer.disconnect();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
 })();
