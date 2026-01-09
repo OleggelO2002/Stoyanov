@@ -24,7 +24,7 @@
       const links = [
         { img: 'https://static.tildacdn.pub/tild3039-6635-4232-b935-336233343336/Mask_group.png', text: 'Telegram канал', href: 'https://t.me/example' },
         { img: 'https://static.tildacdn.pub/tild6637-6163-4336-b134-646664386463/Mask_group-1.png', text: 'Instagram', href: 'https://instagram.com/example' },
-        { img: 'https://static.tildacdn.pub', text: 'Цифровой салон будущего ', href: 'https://t.me/example' },
+        { img: 'https://static.tildacdn.pub', text: 'Цифровой салон будущего ', href: 'https://t.me/igor_stoyanov' },
         { img: 'https://static.tildacdn.pub', text: 'НКО', href: 'https://instagram.com/example' },
         // Добавляйте новые ссылки сюда
       ];
