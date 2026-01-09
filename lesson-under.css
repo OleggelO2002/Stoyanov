@@ -329,7 +329,7 @@ font-family: 'Montserrat' !important;
 font-style: normal !important;
 font-weight: 500 !important;
 font-size: 13px !important;
-color: #ffffff !important;
+color: #000000 !important;
 background: transparent !important; 
 }
 @media (max-width: 768px) {
@@ -347,7 +347,7 @@ display: inline-block !important; /* Позволяет задать разме�
 width: 35px !important; /* Ширина изображения */
 height: 15px !important; /* Высота изображения */
 mask: url('https://static.tildacdn.com/tild3534-3839-4533-b364-616630356631/Arrow_14.svg') no-repeat center;
-background-color: #ffffff !important; /* Тот самый "цвет" SVG */
+background-color: #000000 !important; /* Тот самый "цвет" SVG */
 background-size: contain !important; /* Масштабирует изображение, чтобы оно полностью помещалось в элемент */
 margin-left: 5px !important; /* Отступ слева от псевдоэлемента */
 transform: scale(1.1) rotate(180deg) !important;
@@ -371,7 +371,7 @@ display: inline-block; /* Позволяет задать размеры для 
 width: 35px !important; /* Ширина изображения */
 height: 15px !important; /* Высота изображения */
 mask: url('https://static.tildacdn.com/tild3534-3839-4533-b364-616630356631/Arrow_14.svg') no-repeat center;
-background-color: #ffffff !important; /* Тот самый "цвет" SVG */
+background-color: #000000 !important; /* Тот самый "цвет" SVG */
 background-size: contain !important; /* Масштабирует изображение, чтобы оно полностью помещалось в элемент */
 margin-left: 5px !important; /* Отступ слева от псевдоэлемента */
 transform: scale(1.1) !important ;
