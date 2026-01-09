@@ -10,13 +10,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const intervalId = setInterval(() => {
       checkCount++;
 
-      // Сначала desktop контейнер
-      let container = document.querySelector('.xdget-lessonSchedule');
-
-      // Если нет, используем mobile контейнер
-      if (!container) {
-        container = document.querySelector('.xdget-block.col-md-4.col-gc-4');
-      }
+      // Находим контейнер: сначала desktop, потом mobile
+      const container = document.querySelector('.xdget-lessonSchedule') 
+                     || document.querySelector('.xdget-block.col-md-4');
 
       if (container) {
         clearInterval(intervalId);
@@ -91,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
             container.appendChild(lessonBlock);
             container.appendChild(linksBlock);
 
-            console.log('Блоки last-lesson и полезных ссылок добавлены!');
+            console.log('Блоки last-lesson и полезных ссылок добавлены внутрь контейнера!');
           })
           .catch(error => console.error('Ошибка при загрузке HTML:', error));
       }
@@ -103,4 +99,3 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 100);
   }, 100);
 });
-
