@@ -15,7 +15,11 @@ opacity: 0 !important;
 .collapsed .menu-item-notifications a {
 width: 66px !important;     
 }
-
+@media screen and (max-width: 768px) {
+.xdget-root .row{
+margin-right: -10px !important;
+}
+}
 .gc-account-leftbar .notify-count.with-label{
 top: 12px !important;    
 }
