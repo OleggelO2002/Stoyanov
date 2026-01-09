@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function ()  {
-  // Защита от повторного добавления
+document.addEventListener('DOMContentLoaded', function () {
   if (window.lastLessonInserted) return;
   window.lastLessonInserted = true;
 
@@ -10,7 +9,10 @@ document.addEventListener('DOMContentLoaded', function ()  {
     const intervalId = setInterval(() => {
       checkCount++;
 
-      const scheduleBlock = document.querySelector('.xdget-lessonSchedule');
+      // Находим контейнер: сначала desktop, потом mobile
+      const scheduleBlock = document.querySelector('.xdget-lessonSchedule') 
+                          || document.querySelector('.xdget-block.col-md-4');
+
       if (scheduleBlock) {
         clearInterval(intervalId);
 
@@ -54,11 +56,12 @@ document.addEventListener('DOMContentLoaded', function ()  {
               <a href="${lessonUrl}" class="lesson-btn">Продолжить учиться</a>
             `;
 
+            // Вставка после найденного контейнера
             if (scheduleBlock.parentNode) {
               scheduleBlock.parentNode.insertBefore(lessonBlock, scheduleBlock.nextSibling);
               console.log('Блок добавлен!');
             } else {
-              console.log('Элемент .xdget-lessonSchedule не найден или у него нет родителя');
+              console.log('Элемент для вставки не найден или у него нет родителя');
             }
           })
           .catch(error => console.error('Ошибка при загрузке HTML:', error));
@@ -66,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function ()  {
 
       if (checkCount >= maxChecks) {
         clearInterval(intervalId);
-        console.log('Не удалось найти .xdget-lessonSchedule в течение 3 секунд');
+        console.log('Не удалось найти контейнер для вставки last-lesson в течение 3 секунд');
       }
     }, 100);
   }, 100);
