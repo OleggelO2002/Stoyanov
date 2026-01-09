@@ -96,9 +96,15 @@ display: none !important;
 .container {
 margin-left: 5% !important;
 }
-
+screen and (min-width: 768px) {
 body{
 background-image: url("https://static.tildacdn.pub/tild6131-6136-4364-b534-376663356261/photo.png") !important;
+}
+}
+screen and (max-width: 768px) {
+body{
+background-image: url("https://static.tildacdn.pub/tild6432-6336-4336-a437-373931663834/Slide_16_9_-_5.png") !important;
+}  
 }
 
 #searchWrapper {
