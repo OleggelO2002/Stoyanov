@@ -22,6 +22,57 @@
   font-display: swap;
 }
 
+/* прячем стандартную иконку */
+.toggle-link img {
+    display: none;
+}
+
+/* кнопка */
+.toggle-link {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top: 10px !important;
+    right: 10px !important;
+}
+
+/* линии */
+.toggle-link::before,
+.toggle-link::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: #FFF;
+    transition: transform 0.35s ease, box-shadow 0.25s ease, opacity 0.2s ease;
+    top: 13px !important;
+    right: 10px !important;
+
+}
+
+/* ☰ ЗАКРЫТО (gc-account-leftbar) */
+.gc-account-leftbar .toggle-link::before {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 0 #FFF;
+}
+
+.gc-account-leftbar .toggle-link::after {
+    transform: translateY(8px);
+}
+
+/* ✕ ОТКРЫТО (expanded) */
+.gc-account-leftbar.expanded .toggle-link::before {
+    transform: rotate(45deg);
+    box-shadow: none;
+}
+
+.gc-account-leftbar.expanded .toggle-link::after {
+    transform: rotate(-45deg);
+}
+
+
 
 .gc-account-leftbar .gc-account-user-menu li a:hover {
     background-color: #B73817 !important;
