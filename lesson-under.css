@@ -31,6 +31,9 @@
         padding-right: initial !important;
 }
 
+.breadcrumb {
+margin-top: 50px !important;
+}
 
 .lt-block-wrapper .container {
 margin-top: 0px !important;
