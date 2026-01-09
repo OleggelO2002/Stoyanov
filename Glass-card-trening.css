@@ -231,6 +231,10 @@ margin-top: 30px ;
 display: none !important;    
 }
 
+.breadcrumbs {
+    font-size: 0;
+}
+
 .breadcrumbs a {    
 font-family: 'Futura PT';
 font-style: normal;
@@ -238,6 +242,7 @@ font-weight: 400;
 font-size: 18px;
 line-height: 23px;
 color: #ffffff;
+margin-right: 10px
 }
 .breadcrumbs a:hover  {
 text-decoration: none !important;   
