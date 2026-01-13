@@ -34,7 +34,22 @@
 .breadcrumb {
 margin-top: 50px !important;
 }
-
+.f-text{
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+/* or 179% */
+color: #DCDCDC;    
+}
+.f-header p {
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 28px;
+/* or 179% */
+color: #DCDCDC;    
+}    
 .lt-block-wrapper .container {
 margin-top: 0px !important;
 padding-left: 0px !important; 
