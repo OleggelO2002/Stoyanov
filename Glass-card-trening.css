@@ -179,6 +179,18 @@ transition: transform 0.3s ease, box-shadow 0.3s ease !important;
   z-index: 600 !important;
 }
 
+.glass-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url(https://static.tildacdn.pub/tild3433-3937-4366-b162-633331373431/Clip_path_group.svg);
+    background-repeat: no-repeat;
+    background-size: 30% 20%;
+    background-position: left bottom;
+    pointer-events: none;
+    margin-left: 20px;
+    z-index: 600 !important;
+}
 .training-row td a {
     width: 100%;
     max-width: 400px !important;  /* под размер карточки */
