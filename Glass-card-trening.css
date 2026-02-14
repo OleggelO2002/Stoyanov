@@ -191,6 +191,26 @@ transition: transform 0.3s ease, box-shadow 0.3s ease !important;
     margin-left: 20px;
     z-index: 600 !important;
 }
+.training-row::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url(https://static.tildacdn.pub/tild3861-6465-4563-b831-656633393937/Group_48097499.svg);
+    background-repeat: no-repeat;
+    background-size: 15% 15%;
+    background-position: right bottom;
+    pointer-events: none;
+    margin-right: 40px;
+    margin-bottom: 50px;
+    z-index: 600 !important;
+    transition: transform 0.3s ease !important;
+}
+.training-row:hover::after {
+transform: translateY(-10px);
+}
+
+
+
 .training-row td a {
     width: 100%;
     max-width: 400px !important;  /* под размер карточки */
