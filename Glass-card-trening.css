@@ -191,7 +191,7 @@ transition: transform 0.3s ease, box-shadow 0.3s ease !important;
     margin-left: 20px;
     z-index: 600 !important;
 }
-.training-row::after {
+/*.training-row::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -207,7 +207,7 @@ transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 .training-row:hover::after {
 transform: translateY(-10px);
-}
+}*/
 
 
 
