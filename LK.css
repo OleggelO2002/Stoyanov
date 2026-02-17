@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* ===============ОБЩИЕ=============== */
+body {
+background: #111111    
+}
+
+/* ===============ШАПКА=============== */ 
+.profile-top-bar .HeadingV2 { 
+    font-family: 'Montserrat'; 
+    font-style: normal; 
+    font-weight: 400; 
+    font-size: 48px; 
+    line-height: 59px; /* identical to box height */ 
+    letter-spacing: 0.11em; 
+    text-transform: uppercase; 
+    color: #FFFFFF; 
+} 
+
+.Link span { 
+    font-family: 'Montserrat'; 
+    font-style: normal; 
+    font-weight: 500; 
+    font-size: 23px; 
+    line-height: 33px; /* identical to box height */ 
+    letter-spacing: 0.03em; 
+    color: #FFFFFF; 
+} 
+
+.Link path { 
+    stroke: #FFFFFF; 
+} 
+
+.profile-top-bar__middlerow ._title_4jkbo_25 { 
+    font-family: 'Montserrat'; 
+    font-style: normal; 
+    font-weight: 500; 
+    font-size: 23px; 
+    line-height: 33px; /* identical to box height */ 
+    letter-spacing: 0.03em; 
+    color: #FFFFFF; 
+} 
+
+._dropdown_1b0uj_13 { 
+    left: auto !important; 
+    right: 100px !important; 
+} 
+
+._icon_4jkbo_35 path { 
+    stroke: #FFFFFF; 
+} 
+
+.Flex .profile-top-bar__middlerow { 
+    width: calc(100vw - 200px) !important; 
+    justify-content: space-between; 
+} 
+
+.profile-top-bar .HeadingV2 { 
+    display: block; 
+    width: fit-content; /* блок занимает только место текста [web:13][web:15] */ 
+} 
+
+.profile-top-bar { 
+    position: relative; 
+} 
+
+.profile-top-bar .HeadingV2 { 
+    position: relative; 
+    display: inline-block; /* чтобы линия шла от конца заголовка [web:5][web:9] */ 
+} 
+
+.profile-top-bar .HeadingV2::after { 
+    content: ""; 
+    position: absolute; 
+    top: 50%; 
+    left: 100%; /* сразу после текста */ 
+    margin-left: 30px; /* небольшой отступ от текста */ 
+    width: calc(67vw - 200px) !important; /* с запасом, чтобы уйти до конца окна [web:5][web:8] */ 
+    border-top: 2px solid #ccc; 
+} 
+
+.TabRow { 
+    width: calc(100vw - 200px) !important; 
+    column-gap: 30px !important; 
+} 
+
+.Tab { 
+} 
+
+.Tab[data-selected="true"][data-v-d064b672] { 
+    background: #F0461A !important; 
+    border: none !important; 
+    padding: 10px 20px; 
+    font-family: 'Montserrat'; 
+    font-style: normal; 
+    font-weight: 500; 
+    font-size: 27px; 
+    line-height: 33px; /* identical to box height */ 
+    letter-spacing: 0.03em; 
+    color: #FFF; 
+    border-radius: 7px !important; 
+} 
+
+.Tab[data-selected="false"][data-v-d064b672] { 
+    background: #2A2929 !important; 
+    border: none !important; 
+    padding: 10px 20px; 
+    font-family: 'Montserrat'; 
+    font-style: normal; 
+    font-weight: 500; 
+    font-size: 27px; 
+    line-height: 33px; /* identical to box height */ 
+    letter-spacing: 0.07em; 
+    color: #FFF; 
+    border-radius: 7px !important; 
+} 
+
+/* ===============Блок 1 Профиль=============== */ 
+
+.gap-16-24 > .Flex__column > .Flex { 
+    font-family: 'Montserrat'; 
+    font-style: normal; 
+    font-weight: 600; 
+    font-size: 19px; 
+    line-height: 89.4%; /* identical to box height, or 17px */ 
+    color: #FFFFFF !important; 
+} 
+
+.col.col__left{
+width: 70vw !important;
+max-width: none !important;
+background: transparent !important;
+}
+
+.col__left > div {
+background: #2A2929;
+padding: 25px 40px;
+border-radius: 15px !important;
+}
+
+.col__left div div input {
+border: 2px solid #555454 !important;
+border-radius: 5px !important; 
+background: none !important;
+}
+select {
+border: 2px solid #555454 !important;
+border-radius: 5px !important; 
+background: none !important;   
+font-family: 'Montserrat' !important;
+font-style: normal !important;
+font-weight: 600 !important;
+font-size: 19px !important;
+line-height: 89.4% !important;
+/* identical to box height, or 17px */
+color: #FFFFFF !important; 
+}
+
+.col__left > div > div > div > div {
+font-family: 'Montserrat' !important;
+font-style: norma !important;
+font-weight: 500 !important;
+font-size: 16px !important;
+line-height: 89.4% !important;
+color: #FFFFFF !important;    
+}
+
+.col__left div div input {
+font-family: 'Montserrat' !important;
+font-style: normal !important;
+font-weight: 600 !important;
+font-size: 19px !important;
+line-height: 89.4% !important;
+/* identical to box height, or 17px */
+color: #FFFFFF !important;    
+}
+
+.col__left div div div .Flex {
+border: 2px solid #555454 !important;
+border-radius: 5px !important; 
+background: none !important;   
+font-family: 'Montserrat' !important;
+font-style: normal !important;
+font-weight: 600 !important;
+font-size: 19px !important;
+line-height: 89.4% !important;
+/* identical to box height, or 17px */
+color: #FFFFFF !important;     
+}
+
+.col div div input {
+height: 49px !important;    
+}
+
+.about-title {
+font-family: 'Montserrat' !important;
+font-style: norma !important;
+font-weight: 500 !important;
+font-size: 16px !important;
+line-height: 89.4% !important;
+color: #FFFFFF !important;      
+}
+
+.Textarea {
+border: 2px solid #555454 !important;
+border-radius: 5px !important; 
+background: none !important;       
+}
+.telegram {
+border: 2px solid #555454 !important;
+border-radius: 5px !important; 
+background: none !important; 
+height: 49px !important;
+font-family: 'Montserrat' !important;
+font-style: normal !important;
+font-weight: 600 !important;
+font-size: 19px !important;
+line-height: 89.4% !important;
+color: #FFFFFF !important;  
+}
+
+.right-side {
+max-height: 100% !important;    
+}
+
+.right-side div button {
+font-family: 'Montserrat' !important;
+font-style: normal !important;
+font-weight: 600 !important;
+font-size: 16px !important;
+line-height: 24px !important;
+letter-spacing: 0.03em !important;
+color: #FFFFFF !important; 
+background: #111111 ;
+border: none !important;
+}
+.work-btn {
+background: #F0461A !important;    
+}
+.mark-btn {
+background: #111111 !important;    
+}
+.karta-btn {
+background: #111111 !important;     
+}
