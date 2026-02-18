@@ -211,6 +211,7 @@ font-weight: 600 !important;
 font-size: 19px !important;
 color: #FFFFFF !important;
 height: 50px;
+padding-left: 12px !important;
 }
 
 .InputRow-phone {
@@ -322,4 +323,29 @@ color: #FFF
 ._icon_1qp0x_23 {
   color: #FFF;
   top: 14px !important;
+}
+
+.Textarea {
+/* Rectangle 252 */
+border: 2px solid #555454 !important;
+border-radius: 5px !important;
+background: none !important;    
+}
+
+#profile-page-rd > div > main > article > div.profile-layout-js > div.profile-left-js > div:nth-child(3){
+color: #FFF;
+}
+
+.photoPicker {
+  display: block;       /* на всякий случай */
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 100px;
+}
+
+.profile-left-js .Link {
+  display: block;       /* на всякий случай */
+  margin-left: auto;
+  margin-right: auto;
+  color: red;
 }
