@@ -114,27 +114,10 @@ background: #111111
     border-radius: 7px !important; 
 } 
 
-/* ===============Блок 1 Профиль=============== */ 
-
-.gap-16-24 > .Flex__column > .Flex { 
-    font-family: 'Montserrat'; 
-    font-style: normal; 
-    font-weight: 600; 
-    font-size: 19px; 
-    line-height: 89.4%; /* identical to box height, or 17px */ 
-    color: #FFFFFF !important; 
-} 
-
 .col.col__left{
 width: 70vw !important;
 max-width: none !important;
 background: transparent !important;
-}
-
-.col__left > div {
-background: #2A2929;
-padding: 25px 40px;
-border-radius: 15px !important;
 }
 
 .col__left div div input {
@@ -142,103 +125,201 @@ border: 2px solid #555454 !important;
 border-radius: 5px !important; 
 background: none !important;
 }
-select {
-border: 2px solid #555454 !important;
-border-radius: 5px !important; 
-background: none !important;   
-font-family: 'Montserrat' !important;
-font-style: normal !important;
-font-weight: 600 !important;
-font-size: 19px !important;
-line-height: 89.4% !important;
-/* identical to box height, or 17px */
-color: #FFFFFF !important; 
+
+
+
+
+
+
+.profile-layout-js {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
 }
 
-.col__left > div > div > div > div {
+.profile-left-js {
+  background: #2A2929;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.profile-right-js {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 80%;
+}
+
+.profile-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.profile-row .wide {
+  grid-column: span 2;
+}
+
+.profile-right-js {
+background: #2A2929;
+padding: 20px;
+border-radius: 12px;
+display: flex;
+flex-direction: column;
+gap: 16px;    
+}
+
+.Caption {
 font-family: 'Montserrat' !important;
-font-style: norma !important;
+font-style: normal !important;
 font-weight: 500 !important;
 font-size: 16px !important;
-line-height: 89.4% !important;
-color: #FFFFFF !important;    
-}
-
-.col__left div div input {
-font-family: 'Montserrat' !important;
-font-style: normal !important;
-font-weight: 600 !important;
-font-size: 19px !important;
-line-height: 89.4% !important;
-/* identical to box height, or 17px */
-color: #FFFFFF !important;    
-}
-
-.col__left div div div .Flex {
-border: 2px solid #555454 !important;
-border-radius: 5px !important; 
-background: none !important;   
-font-family: 'Montserrat' !important;
-font-style: normal !important;
-font-weight: 600 !important;
-font-size: 19px !important;
-line-height: 89.4% !important;
-/* identical to box height, or 17px */
-color: #FFFFFF !important;     
-}
-
-.col div div input {
-height: 49px !important;    
-}
-
-.about-title {
-font-family: 'Montserrat' !important;
-font-style: norma !important;
-font-weight: 500 !important;
-font-size: 16px !important;
-line-height: 89.4% !important;
-color: #FFFFFF !important;      
-}
-
-.Textarea {
-border: 2px solid #555454 !important;
-border-radius: 5px !important; 
-background: none !important;       
-}
-.telegram {
-border: 2px solid #555454 !important;
-border-radius: 5px !important; 
-background: none !important; 
-height: 49px !important;
-font-family: 'Montserrat' !important;
-font-style: normal !important;
-font-weight: 600 !important;
-font-size: 19px !important;
-line-height: 89.4% !important;
 color: #FFFFFF !important;  
 }
 
-.right-side {
-max-height: 100% !important;    
+.wide .InputRow__title {
+font-family: 'Montserrat' !important;
+font-style: normal !important;
+font-weight: 500 !important;
+font-size: 16px !important;
+color: #FFFFFF !important;     
 }
 
-.right-side div button {
+.row-3 .InputRow__title {
+font-family: 'Montserrat' !important;
+font-style: normal !important;
+font-weight: 500 !important;
+font-size: 16px !important;
+color: #FFFFFF !important;       
+}
+
+._inputText_1xiwj_1 {
 font-family: 'Montserrat' !important;
 font-style: normal !important;
 font-weight: 600 !important;
-font-size: 16px !important;
-line-height: 24px !important;
-letter-spacing: 0.03em !important;
-color: #FFFFFF !important; 
-background: #111111 ;
-border: none !important;
+font-size: 19px !important;
+color: #FFFFFF !important;    
 }
-.work-btn {
-background: #F0461A !important;    
+
+.col__left div div input{
+font-family: 'Montserrat' !important;
+font-style: normal !important;
+font-weight: 600 !important;
+font-size: 19px !important;
+color: #FFFFFF !important;
+height: 50px;
 }
-.mark-btn {
-background: #111111 !important;    
+
+.InputRow-phone {
+grid-column: span 2 !important; 
+max-width: 100% !important;
 }
-.karta-btn {
-background: #111111 !important;     
+
+label {
+font-family: 'Montserrat' !important;
+font-style: normal !important;
+font-weight: 600 !important;
+font-size: 15px !important;
+color: #FFFFFF !important;    
+}
+
+._input_1qp0x_3 {
+max-width: none !important;    
+}
+
+.profile-extra-buttons {
+position: relative;
+top: 17% !important;
+left: -20px;
+}
+
+.profile-extra-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 35px;
+  width: calc(100% + 40px);
+  margin-top: 24px;
+}
+
+.profile-extra-buttons .profile-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 48px;
+  background: #2A2929;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: background 0.2s ease, transform 0.15s ease;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+color: #FFFFFF;
+
+}
+
+.profile-extra-buttons .profile-btn:hover {
+  background: #F0461A;
+  transform: translateY(-1px);
+}
+
+.gap-16-24 {
+width: 33% !important;   
+}
+
+.btn-set-password {
+background: #2A2929;
+border-radius: 10px;
+margin-top: 20px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+color: #FFFFFF;
+}
+
+
+._ButtonPrimary_1yri8_141 {
+background: #2A2929 !;
+border-radius: 10px;
+margin-top: 10px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600; 
+margin-top: 0px !important;  
+}
+.Flex .Flex__column .mt-12-16{
+margin-top: 0px !important;
+}
+
+.gap-8-12 .HeadingV2 {
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 22px !important;
+color: #FFFFFF;    
+}
+
+.social-link__vk .buttons[data-v-4ca29ef0]{
+background: #fff !important;
+}
+
+.social-link__vk .text[data-v-4ca29ef0]{
+color: #000 !important;    
+}
+
+._inputText_1xiwj_1._input_1qp0x_3._input_1qp0x_3::placeholder {
+color: #FFF    
+}
+._icon_1qp0x_23 {
+  color: #FFF;
+  top: 14px !important;
 }
