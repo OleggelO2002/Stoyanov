@@ -368,3 +368,38 @@ color: #FFF;
   padding: 24px;
 }
 
+
+/* 🔹 сетка справа: 2 колонки × 3 ряда */
+.profile-right-col .mentor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 50 / 50 */
+  gap: 24px 32px;                 /* отступы как в форме */
+  width: 100%;
+}
+
+/* чтобы строки выглядели как обычные InputRow */
+.profile-right-col .mentor-grid .InputRow {
+  display: flex;
+  flex-direction: column;
+}
+
+/* сами данные */
+.profile-right-col .mentor-value {
+  margin-top: 6px;
+  padding: 12px 14px;
+  background: #2A2929;
+  border-radius: 8px;
+  border: 2px solid #555454 !important;
+
+  font-family: 'Montserrat';
+  font-size: 16px;
+  font-weight: 500;
+  color: #FFFFFF;
+  line-height: 1.4;
+  min-height: 44px;
+}
+
+.mentor-value{
+max-width: 358px !important;
+word-wrap: break-word;
+}
