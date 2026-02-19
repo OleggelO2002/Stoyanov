@@ -273,7 +273,7 @@ color: #FFFFFF;
   transform: translateY(-1px);
 }
 
-.gap-16-24 {
+..gap-16-24 {
 width: 33% !important;   
 }
 
@@ -349,3 +349,22 @@ color: #FFF;
   margin-right: auto;
   color: red;
 }
+
+.profile-wide-row {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+}
+
+.profile-left-col {
+  width: 33.333%;
+}
+
+.profile-right-col {
+  margin-top: 25px !important;
+  width: 66.666%;
+  background: #2A2929; /* можно убрать */
+  border-radius: 16px;
+  padding: 24px;
+}
+
