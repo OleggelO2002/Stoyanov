@@ -224,6 +224,9 @@ transition: all 0.3s ease;
 .gc-account-user-menu{
 height: 97vh !important;
 }
+.gc-account-leftbar .gc-account-user-menu li.menu-item-profile a {
+justify-content: none;
+}
 }
 .menu-item a[title="Свернуть меню"]::before{
 left: 17px;
