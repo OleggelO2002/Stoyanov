@@ -20,7 +20,7 @@ background: #111111
     font-family: 'Montserrat'; 
     font-style: normal; 
     font-weight: 500; 
-    font-size: 23px; 
+    font-size: px; 
     line-height: 33px; /* identical to box height */ 
     letter-spacing: 0.03em; 
     color: #FFFFFF; 
@@ -29,7 +29,7 @@ background: #111111
 .Link path { 
     stroke: #FFFFFF; 
 } 
-
+@media screen and (min-width: 768px) {
 .profile-top-bar__middlerow ._title_4jkbo_25 { 
     font-family: 'Montserrat'; 
     font-style: normal; 
@@ -39,21 +39,57 @@ background: #111111
     letter-spacing: 0.03em; 
     color: #FFFFFF; 
 } 
-
+}
+@media screen and (max-width: 768px) {
+.profile-top-bar__middlerow ._title_4jkbo_25 { 
+    font-family: 'Montserrat'; 
+    font-style: normal; 
+    font-weight: 500; 
+    font-size: 15px; 
+    line-height: 33px; /* identical to box height */ 
+    letter-spacing: 0.03em; 
+    color: #FFFFFF; 
+} 
+.Flex{
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    color: #FFFFFF;   
+}
+    
+#form > div.Flex.multi-column{
+      background: #2A2929;
+ padding: 20px;
+ border-radius: 12px;
+ display: flex;
+ flex-direction: column;
+ gap: 16px; 
+ margin-bottom: 20px !important;
+    }
+}
+@media screen and (min-width: 768px) {
 ._dropdown_1b0uj_13 { 
     left: auto !important; 
     right: 100px !important; 
 } 
-
+}
 ._icon_4jkbo_35 path { 
     stroke: #FFFFFF; 
 } 
 
+body > div:nth-child(6) > div > div.Flex.Flex__column.menu-exit-bottom > div:nth-child(1) > div > div{
+color: #111 !important;    
+}
+body > div:nth-child(6) > div > div.Flex.Flex__column.menu-exit-bottom > div:nth-child(2) > div > div{
+color: #111 !important;        
+}
+
+@media screen and (min-width: 768px) {
 .Flex .profile-top-bar__middlerow { 
     width: calc(100vw - 200px) !important; 
     justify-content: space-between; 
 } 
-
+}
 .profile-top-bar .HeadingV2 { 
     display: block; 
     width: fit-content; /* блок занимает только место текста [web:13][web:15] */ 
@@ -77,15 +113,49 @@ background: #111111
     width: calc(67vw - 200px) !important; /* с запасом, чтобы уйти до конца окна [web:5][web:8] */ 
     border-top: 2px solid #ccc; 
 } 
-
+@media screen and (min-width: 768px) {
 .TabRow { 
     width: calc(100vw - 200px) !important; 
     column-gap: 30px !important; 
 } 
-
+}
 .Tab { 
 } 
 
+@media screen and (max-width: 768px) {
+.Tab[data-selected="true"][data-v-d064b672] { 
+    background: #F0461A !important; 
+    border: none !important; 
+    padding: 10px 20px; 
+    font-family: 'Montserrat'; 
+    font-style: normal; 
+    font-weight: 500; 
+    font-size: 27px; 
+    line-height: 33px; /* identical to box height */ 
+    letter-spacing: 0.03em; 
+    color: #FFF; 
+    border-radius: 7px !important; 
+    margin-bottom: 10px;
+    margin-right: 10px;
+} 
+
+.Tab[data-selected="false"][data-v-d064b672] { 
+    background: #2A2929 !important; 
+    border: none !important; 
+    padding: 10px 20px; 
+    font-family: 'Montserrat'; 
+    font-style: normal; 
+    font-weight: 500; 
+    font-size: 27px; 
+    line-height: 33px; /* identical to box height */ 
+    letter-spacing: 0.07em; 
+    color: #FFF; 
+    border-radius: 7px !important; 
+
+}     
+}
+
+@media screen and (min-width: 768px) {
 .Tab[data-selected="true"][data-v-d064b672] { 
     background: #F0461A !important; 
     border: none !important; 
@@ -119,7 +189,7 @@ width: 70vw !important;
 max-width: none !important;
 background: transparent !important;
 }
-
+}
 .col__left div div input {
 border: 2px solid #555454 !important;
 border-radius: 5px !important; 
@@ -177,7 +247,7 @@ font-family: 'Montserrat' !important;
 font-style: normal !important;
 font-weight: 500 !important;
 font-size: 16px !important;
-color: #FFFFFF !important;  
+color: #FFFFFF;  
 }
 
 .wide .InputRow__title {
@@ -289,7 +359,7 @@ color: #FFFFFF;
 
 
 ._ButtonPrimary_1yri8_141 {
-background: #2A2929 !;
+background: #F0461A !important;
 border-radius: 10px;
 margin-top: 10px;
 font-family: 'Montserrat';
