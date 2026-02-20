@@ -98,7 +98,7 @@ color: #111 !important;
 .profile-top-bar { 
     position: relative; 
 } 
-
+@media screen and (min-width: 768px) {
 .profile-top-bar .HeadingV2 { 
     position: relative; 
     display: inline-block; /* чтобы линия шла от конца заголовка [web:5][web:9] */ 
@@ -113,6 +113,7 @@ color: #111 !important;
     width: calc(67vw - 200px) !important; /* с запасом, чтобы уйти до конца окна [web:5][web:8] */ 
     border-top: 2px solid #ccc; 
 } 
+}
 @media screen and (min-width: 768px) {
 .TabRow { 
     width: calc(100vw - 200px) !important; 
@@ -301,6 +302,35 @@ color: #FFFFFF !important;
 max-width: none !important;    
 }
 
+@media screen and (max-width: 768px) {
+    
+.profile-extra-buttons {
+  margin-top: 24px;
+}   
+.profile-extra-buttons .profile-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 48px;
+  background: #2A2929;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  transition: background 0.2s ease, transform 0.15s ease;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+color: #FFFFFF;
+
+}    
+}
+@media screen and (min-width: 768px) {
 .profile-extra-buttons {
 position: relative;
 top: 17% !important;
@@ -337,7 +367,7 @@ font-size: 16px;
 color: #FFFFFF;
 
 }
-
+}
 .profile-extra-buttons .profile-btn:hover {
   background: #F0461A;
   transform: translateY(-1px);
@@ -473,3 +503,33 @@ color: #FFF;
 max-width: 358px !important;
 word-wrap: break-word;
 }
+@media screen and (max-width: 768px) {
+.mentor-value {
+  margin-top: 6px;
+  padding: 12px 14px;
+  background: #2A2929;
+  border-radius: 8px;
+  border: 2px solid #555454 !important;
+
+  font-family: 'Montserrat';
+  font-size: 16px;
+  font-weight: 500;
+  color: #FFFFFF;
+  line-height: 1.4;
+  min-height: 44px;
+}
+.InputRow__title{
+font-family: 'Montserrat' !important;
+font-style: normal !important;
+font-weight: 500 !important;
+color: #FFFFFF;  
+}
+.mentor-grid.mentor-grid--mobile{
+background: #2A2929;
+        padding: 20px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 20px !important;    
+    }
