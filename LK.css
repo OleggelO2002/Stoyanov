@@ -1,535 +1,281 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-/* ===============ОБЩИЕ=============== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* ================= ОБЩИЕ ================= */
+
 body {
-background: #111111    
+  background: #111111;
+  font-family: 'Montserrat', sans-serif;
+  color: #FFFFFF;
 }
 
-/* ===============ШАПКА=============== */ 
-.profile-top-bar .HeadingV2 { 
-    font-family: 'Montserrat'; 
-    font-style: normal; 
-    font-weight: 400; 
-    font-size: 48px; 
-    line-height: 59px; /* identical to box height */ 
-    letter-spacing: 0.11em; 
-    text-transform: uppercase; 
-    color: #FFFFFF; 
-} 
-
-.Link span { 
-    font-family: 'Montserrat'; 
-    font-style: normal; 
-    font-weight: 500; 
-    font-size: px; 
-    line-height: 33px; /* identical to box height */ 
-    letter-spacing: 0.03em; 
-    color: #FFFFFF; 
-} 
-
-.Link path { 
-    stroke: #FFFFFF; 
-} 
-@media screen and (min-width: 768px) {
-.profile-top-bar__middlerow ._title_4jkbo_25 { 
-    font-family: 'Montserrat'; 
-    font-style: normal; 
-    font-weight: 500; 
-    font-size: 23px; 
-    line-height: 33px; /* identical to box height */ 
-    letter-spacing: 0.03em; 
-    color: #FFFFFF; 
-} 
-}
-@media screen and (max-width: 768px) {
-.profile-top-bar__middlerow ._title_4jkbo_25 { 
-    font-family: 'Montserrat'; 
-    font-style: normal; 
-    font-weight: 500; 
-    font-size: 15px; 
-    line-height: 33px; /* identical to box height */ 
-    letter-spacing: 0.03em; 
-    color: #FFFFFF; 
-} 
-.Flex{
-    font-family: 'Montserrat' !important;
-    font-style: normal !important;
-    font-weight: 500 !important;
-    color: #FFFFFF;   
-}
-    
-#form > div.Flex.multi-column{
-      background: #2A2929;
- padding: 20px;
- border-radius: 12px;
- display: flex;
- flex-direction: column;
- gap: 16px; 
- margin-bottom: 20px !important;
-    }
-}
-@media screen and (min-width: 768px) {
-._dropdown_1b0uj_13 { 
-    left: auto !important; 
-    right: 100px !important; 
-} 
-}
-._icon_4jkbo_35 path { 
-    stroke: #FFFFFF; 
-} 
-
-body > div:nth-child(6) > div > div.Flex.Flex__column.menu-exit-bottom > div:nth-child(1) > div > div{
-color: #111 !important;    
-}
-body > div:nth-child(6) > div > div.Flex.Flex__column.menu-exit-bottom > div:nth-child(2) > div > div{
-color: #111 !important;        
+.profile {
+  width: 90vw;
+  max-width: 1400px;
+  margin: 40px auto;
 }
 
-@media screen and (min-width: 768px) {
-.Flex .profile-top-bar__middlerow { 
-    width: calc(100vw - 200px) !important; 
-    justify-content: space-between; 
-} 
-}
-.profile-top-bar .HeadingV2 { 
-    display: block; 
-    width: fit-content; /* блок занимает только место текста [web:13][web:15] */ 
-} 
+/* ================= LAYOUT ================= */
 
-.profile-top-bar { 
-    position: relative; 
-} 
-@media screen and (min-width: 768px) {
-.profile-top-bar .HeadingV2 { 
-    position: relative; 
-    display: inline-block; /* чтобы линия шла от конца заголовка [web:5][web:9] */ 
-} 
-
-.profile-top-bar .HeadingV2::after { 
-    content: ""; 
-    position: absolute; 
-    top: 50%; 
-    left: 100%; /* сразу после текста */ 
-    margin-left: 30px; /* небольшой отступ от текста */ 
-    width: calc(67vw - 200px) !important; /* с запасом, чтобы уйти до конца окна [web:5][web:8] */ 
-    border-top: 2px solid #ccc; 
-} 
-}
-@media screen and (min-width: 768px) {
-.TabRow { 
-    width: calc(100vw - 200px) !important; 
-    column-gap: 30px !important; 
-} 
-}
-.Tab { 
-} 
-
-@media screen and (max-width: 768px) {
-.Tab[data-selected="true"][data-v-d064b672] { 
-    background: #F0461A !important; 
-    border: none !important; 
-    padding: 10px 20px; 
-    font-family: 'Montserrat'; 
-    font-style: normal; 
-    font-weight: 500; 
-    font-size: 27px; 
-    line-height: 33px; /* identical to box height */ 
-    letter-spacing: 0.03em; 
-    color: #FFF; 
-    border-radius: 7px !important; 
-    margin-bottom: 10px;
-    margin-right: 10px;
-} 
-
-.Tab[data-selected="false"][data-v-d064b672] { 
-    background: #2A2929 !important; 
-    border: none !important; 
-    padding: 10px 20px; 
-    font-family: 'Montserrat'; 
-    font-style: normal; 
-    font-weight: 500; 
-    font-size: 27px; 
-    line-height: 33px; /* identical to box height */ 
-    letter-spacing: 0.07em; 
-    color: #FFF; 
-    border-radius: 7px !important; 
-
-}     
-}
-
-@media screen and (min-width: 768px) {
-.Tab[data-selected="true"][data-v-d064b672] { 
-    background: #F0461A !important; 
-    border: none !important; 
-    padding: 10px 20px; 
-    font-family: 'Montserrat'; 
-    font-style: normal; 
-    font-weight: 500; 
-    font-size: 27px; 
-    line-height: 33px; /* identical to box height */ 
-    letter-spacing: 0.03em; 
-    color: #FFF; 
-    border-radius: 7px !important; 
-} 
-
-.Tab[data-selected="false"][data-v-d064b672] { 
-    background: #2A2929 !important; 
-    border: none !important; 
-    padding: 10px 20px; 
-    font-family: 'Montserrat'; 
-    font-style: normal; 
-    font-weight: 500; 
-    font-size: 27px; 
-    line-height: 33px; /* identical to box height */ 
-    letter-spacing: 0.07em; 
-    color: #FFF; 
-    border-radius: 7px !important; 
-} 
-
-.col.col__left{
-width: 70vw !important;
-max-width: none !important;
-background: transparent !important;
-}
-}
-.col__left div div input {
-border: 2px solid #555454 !important;
-border-radius: 5px !important; 
-background: none !important;
-}
-
-
-
-
-
-
-.profile-layout-js {
+.profile-layout {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 340px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* ================= LEFT COLUMN ================= */
+
+.profile-left {
+  display: flex;
+  flex-direction: column;
   gap: 24px;
 }
 
-.profile-left-js {
+.profile-card {
   background: #2A2929;
-  padding: 20px;
+  border-radius: 20px;
+  padding: 30px 25px;
+  text-align: center;
+}
+
+.profile-avatar {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  background-size: cover;
+  background-position: center;
+  background-color: #1d1d1d;
+}
+
+.profile-name {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.profile-about {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #cfcfcf;
+}
+
+/* ================= BUTTONS ================= */
+
+.btn-primary {
+  background: #F0461A;
+  border: none;
   border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  height: 48px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 
-.profile-right-js {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  height: 80%;
+.btn-primary:hover {
+  opacity: 0.9;
 }
 
-.profile-row {
+/* ================= SOCIAL ================= */
+
+.social-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.block-title {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.social-btn.vk {
+  background: #3b82f6;
+  color: #fff;
+}
+
+.social-btn.google {
+  background: #ea4335;
+  color: #fff;
+}
+
+.social-btn.yandex {
+  background: #ffffff;
+  color: #000;
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ================= RIGHT COLUMN ================= */
+
+.profile-right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* ================= FORM CARD ================= */
+
+.profile-form {
+  background: #2A2929;
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 20px;
 }
 
-.profile-row .wide {
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group.wide {
   grid-column: span 2;
 }
 
-.profile-right-js {
-background: #2A2929;
-padding: 20px;
-border-radius: 12px;
-display: flex;
-flex-direction: column;
-gap: 16px;    
-}
-
-.Caption {
-font-family: 'Montserrat' !important;
-font-style: normal !important;
-font-weight: 500 !important;
-font-size: 16px !important;
-color: #FFFFFF;  
-}
-
-.wide .InputRow__title {
-font-family: 'Montserrat' !important;
-font-style: normal !important;
-font-weight: 500 !important;
-font-size: 16px !important;
-color: #FFFFFF !important;     
-}
-
-.row-3 .InputRow__title {
-font-family: 'Montserrat' !important;
-font-style: normal !important;
-font-weight: 500 !important;
-font-size: 16px !important;
-color: #FFFFFF !important;       
-}
-
-._inputText_1xiwj_1 {
-font-family: 'Montserrat' !important;
-font-style: normal !important;
-font-weight: 600 !important;
-font-size: 19px !important;
-color: #FFFFFF !important;    
-}
-
-.col__left div div input{
-font-family: 'Montserrat' !important;
-font-style: normal !important;
-font-weight: 600 !important;
-font-size: 19px !important;
-color: #FFFFFF !important;
-height: 50px;
-padding-left: 12px !important;
-}
-
-.InputRow-phone {
-grid-column: span 2 !important; 
-max-width: 100% !important;
-}
-
-label {
-font-family: 'Montserrat' !important;
-font-style: normal !important;
-font-weight: 600 !important;
-font-size: 15px !important;
-color: #FFFFFF !important;    
-}
-
-._input_1qp0x_3 {
-max-width: none !important;    
-}
-
-@media screen and (max-width: 768px) {
-    
-.profile-extra-buttons {
-  margin-top: 24px;
-}   
-.profile-extra-buttons .profile-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 48px;
-  background: #2A2929;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 12px;
-  font-size: 14px;
+.form-group label {
   font-weight: 500;
-  margin-bottom: 15px;
-  transition: background 0.2s ease, transform 0.15s ease;
-
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-color: #FFFFFF;
-
-}    
-}
-@media screen and (min-width: 768px) {
-.profile-extra-buttons {
-position: relative;
-top: 17% !important;
-left: -20px;
+  font-size: 14px;
+  color: #bdbdbd;
 }
 
-.profile-extra-buttons {
+.form-group input,
+.form-group select {
+  height: 48px;
+  border-radius: 8px;
+  border: 2px solid #555454;
+  background: transparent;
+  padding: 0 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.form-group input:disabled {
+  opacity: 0.6;
+}
+
+/* ================= LINKS ROW ================= */
+
+.profile-links {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 35px;
-  width: calc(100% + 40px);
-  margin-top: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-.profile-extra-buttons .profile-btn {
+.profile-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  min-height: 48px;
+  height: 48px;
   background: #2A2929;
-  color: #fff;
-  text-decoration: none;
   border-radius: 12px;
-  font-size: 14px;
-  font-weight: 500;
-
-  transition: background 0.2s ease, transform 0.15s ease;
-
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-color: #FFFFFF;
-
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  color: #FFFFFF;
+  transition: 0.2s ease;
 }
-}
-.profile-extra-buttons .profile-btn:hover {
+
+.profile-link.primary {
   background: #F0461A;
-  transform: translateY(-1px);
 }
 
-..gap-16-24 {
-width: 33% !important;   
+.profile-link:hover {
+  transform: translateY(-5px);
+  text-decoration: none;
+  color: #FFF;
 }
 
-.btn-set-password {
-background: #2A2929;
-border-radius: 10px;
-margin-top: 20px;
+/* ================= CONTRACT CARD ================= */
+
+.contract-card {
+  background: #2A2929;
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.contract-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.contract-row .wide {
+  grid-column: span 2;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-links {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contract-row {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+.card-title {
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 600;
-color: #FFFFFF;
-}
-
-
-._ButtonPrimary_1yri8_141 {
-background: #F0461A !important;
-border-radius: 10px;
-margin-top: 10px;
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600; 
-margin-top: 0px !important;  
-}
-.Flex .Flex__column .mt-12-16{
-margin-top: 0px !important;
-}
-
-.gap-8-12 .HeadingV2 {
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 22px !important;
 color: #FFFFFF;    
 }
 
-.social-link__vk .buttons[data-v-4ca29ef0]{
-background: #fff !important;
+.block-title {
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+color: #FFFFFF;      
 }
 
-.social-link__vk .text[data-v-4ca29ef0]{
-color: #000 !important;    
+.profile-name {
+ font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+color: #FFFFFF;    
 }
-
-._inputText_1xiwj_1._input_1qp0x_3._input_1qp0x_3::placeholder {
-color: #FFF    
-}
-._icon_1qp0x_23 {
-  color: #FFF;
-  top: 14px !important;
-}
-
-.Textarea {
-/* Rectangle 252 */
-border: 2px solid #555454 !important;
-border-radius: 5px !important;
-background: none !important;    
-}
-
-#profile-page-rd > div > main > article > div.profile-layout-js > div.profile-left-js > div:nth-child(3){
-color: #FFF;
-}
-
-.photoPicker {
-  display: block;       /* на всякий случай */
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 100px;
-}
-
-.profile-left-js .Link {
-  display: block;       /* на всякий случай */
-  margin-left: auto;
-  margin-right: auto;
-  color: red;
-}
-
-.profile-wide-row {
-  display: flex;
-  gap: 24px;
-  width: 100%;
-}
-
-.profile-left-col {
-  width: 33.333%;
-}
-
-.profile-right-col {
-  margin-top: 25px !important;
-  width: 66.666%;
-  background: #2A2929; /* можно убрать */
-  border-radius: 16px;
-  padding: 24px;
-}
-
-
-/* 🔹 сетка справа: 2 колонки × 3 ряда */
-.profile-right-col .mentor-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* 50 / 50 */
-  gap: 24px 32px;                 /* отступы как в форме */
-  width: 100%;
-}
-
-/* чтобы строки выглядели как обычные InputRow */
-.profile-right-col .mentor-grid .InputRow {
-  display: flex;
-  flex-direction: column;
-}
-
-/* сами данные */
-.profile-right-col .mentor-value {
-  margin-top: 6px;
-  padding: 12px 14px;
-  background: #2A2929;
-  border-radius: 8px;
-  border: 2px solid #555454 !important;
-
-  font-family: 'Montserrat';
-  font-size: 16px;
-  font-weight: 500;
-  color: #FFFFFF;
-  line-height: 1.4;
-  min-height: 44px;
-}
-
-.mentor-value{
-max-width: 358px !important;
-word-wrap: break-word;
-}
-@media screen and (max-width: 768px) {
-.mentor-value {
-  margin-top: 6px;
-  padding: 12px 14px;
-  background: #2A2929;
-  border-radius: 8px;
-  border: 2px solid #555454 !important;
-
-  font-family: 'Montserrat';
-  font-size: 16px;
-  font-weight: 500;
-  color: #FFFFFF;
-  line-height: 1.4;
-  min-height: 44px;
-}
-.InputRow__title{
-font-family: 'Montserrat' !important;
-font-style: normal !important;
-font-weight: 500 !important;
-color: #FFFFFF;  
-}
-.mentor-grid.mentor-grid--mobile{
-background: #2A2929;
-        padding: 20px;
-        border-radius: 12px;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        margin-bottom: 20px !important;    
-    }
