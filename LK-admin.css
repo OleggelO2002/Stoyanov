@@ -1,1 +1,27 @@
+.panel-body {
+background: #fff !important;
+border-radius: 14px !important;    
+}
 
+.panel.panel-default.has-toggle{
+border: none !important;
+background: #ffffff;
+border-radius: 14px !important;
+
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+}
+
+.panel{
+background: #ffffff;
+border-radius: 14px !important;    
+}
+
+.panel-heading {
+border-radius: 14px !important;
+background: #2563eb !important;
+color: white !important;
+}
+
+form .row i {
+color: white !important;    
+}
