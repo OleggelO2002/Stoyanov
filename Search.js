@@ -109,30 +109,35 @@ $(document).ready(function () {
 
   // Функция для выполнения поиска
   function getData(searchStr, callback) {
-    $.get('/pl/search/search-lesson', { q: searchStr }, function (html) {
-      const $doc = $('<div>').append($.parseHTML(html));
-      const results = [];
+    $.get('/pl/search/search-lesson', { q: searchStr })
+      .done(function (html) {
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        const results = [];
 
-      $doc.find('.sp-item-card').each(function () {
-        const $item = $(this);
-        const type = $item.find('.sp-item-type').text().trim();
-        const $link = $item.find('.sp-item-title-link');
-        const title = $link.text().trim();
-        const href = $link.attr('href');
-        const subtitle = $item.find('.sp-item-subtitle').text().replace('→', '').trim();
-        const description = $item.find('.sp-item-short-description').text().trim();
-        const isLesson = type === 'Урок';
+        doc.querySelectorAll('.sp-item-card').forEach(function (item) {
+          const typeEl = item.querySelector('.sp-item-type');
+          const link = item.querySelector('.sp-item-title-link');
+          const subtitleEl = item.querySelector('.sp-item-subtitle');
+          const descEl = item.querySelector('.sp-item-short-description');
 
-        if (href) {
-          const url = href.startsWith('http') ? href : window.location.origin + href;
-          results.push({ isLesson, title, description: subtitle || description, image: null, url });
-        }
+          const type = typeEl ? typeEl.textContent.trim() : '';
+          const title = link ? link.textContent.trim() : '';
+          const href = link ? link.getAttribute('href') : null;
+          const subtitle = subtitleEl ? subtitleEl.textContent.replace('→', '').trim() : '';
+          const description = descEl ? descEl.textContent.trim() : '';
+          const isLesson = type === 'Урок';
+
+          if (href && title) {
+            const url = href.startsWith('http') ? href : window.location.origin + href;
+            results.push({ isLesson, title, description: subtitle || description, image: null, url });
+          }
+        });
+
+        callback(results);
+      })
+      .fail(function () {
+        callback([]);
       });
-
-      callback(results);
-    }).fail(function () {
-      callback([]);
-    });
   }
 
   // Рендеринг результатов поиска
@@ -178,7 +183,7 @@ $(document).ready(function () {
       searchResults.html('<p>Ничего не найдено.</p>');
     }
 
-    searchResults.addClass('visible'); // Показываем блок
+    searchResults.show();
   }
 
   // Скрытие результатов при клике вне блока
@@ -187,7 +192,7 @@ $(document).ready(function () {
     const searchResults = isMobile() ? $('#searchResultsMobile') : $('#searchResults');
 
     if (!searchContainer.is(event.target) && searchContainer.has(event.target).length === 0) {
-      searchResults.removeClass('visible');
+      searchResults.hide();
     }
   });
 
@@ -206,7 +211,7 @@ $(document).ready(function () {
         });
       }, typingDelay);
     } else {
-      searchResults.removeClass('visible').empty();
+      searchResults.hide().empty();
     }
   });
 
