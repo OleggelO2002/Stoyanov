@@ -109,45 +109,28 @@ $(document).ready(function () {
 
   // Функция для выполнения поиска
   function getData(searchStr, callback) {
-    console.log('[Search] Запрос:', searchStr);
-
     $.get('/pl/search/search-lesson', { q: searchStr })
-      .done(function (html) {
-        console.log('[Search] Ответ получен, длина HTML:', html.length);
-        console.log('[Search] Первые 500 символов:', html.slice(0, 500));
+      .done(function (data) {
+        if (!data || !Array.isArray(data.results)) {
+          callback([]);
+          return;
+        }
 
-        const doc = new DOMParser().parseFromString(html, 'text/html');
-        const cards = doc.querySelectorAll('.sp-item-card');
-        console.log('[Search] Найдено .sp-item-card:', cards.length);
-
-        const results = [];
-
-        cards.forEach(function (item) {
-          const typeEl = item.querySelector('.sp-item-type');
-          const link = item.querySelector('.sp-item-title-link');
-          const subtitleEl = item.querySelector('.sp-item-subtitle');
-          const descEl = item.querySelector('.sp-item-short-description');
-
-          const type = typeEl ? typeEl.textContent.trim() : '';
-          const title = link ? link.textContent.trim() : '';
-          const href = link ? link.getAttribute('href') : null;
-          const subtitle = subtitleEl ? subtitleEl.textContent.replace('→', '').trim() : '';
-          const description = descEl ? descEl.textContent.trim() : '';
-          const isLesson = type === 'Урок';
-
-          console.log('[Search] Карточка:', { type, title, href, subtitle, description });
-
-          if (href && title) {
-            const url = href.startsWith('http') ? href : window.location.origin + href;
-            results.push({ isLesson, title, description: subtitle || description, image: null, url });
-          }
+        const results = data.results.map(function (item) {
+          const isLesson = item.category === 1;
+          const url = item.url.startsWith('http') ? item.url : window.location.origin + item.url;
+          return {
+            isLesson,
+            title: item.title || 'Без названия',
+            description: item.trainingName || item.description || '',
+            image: null,
+            url
+          };
         });
 
-        console.log('[Search] Итого результатов:', results.length);
         callback(results);
       })
-      .fail(function (xhr, status, error) {
-        console.error('[Search] Запрос провалился:', status, error, xhr.status, xhr.responseText?.slice(0, 300));
+      .fail(function () {
         callback([]);
       });
   }
