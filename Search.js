@@ -109,26 +109,29 @@ $(document).ready(function () {
 
   // Функция для выполнения поиска
   function getData(searchStr, callback) {
-    $.getJSON('/c/sa/search', { searchStr }, function (response) {
-      if (response.success === true && Array.isArray(response.data.blocks)) {
-        const results = response.data.blocks
-          .filter(block => block.onClick?.url) // Учитываем только блоки с ссылкой
-          .map(function (block) {
-            const domain = window.location.origin;
-            const fullUrl = domain + block.onClick.url;
-            const isLesson = fullUrl.includes('lesson'); // Проверяем, содержит ли URL слово 'lesson'
-            return {
-              isLesson,
-              title: block.title || "Без названия",
-              description: block.description || "Нет описания",
-              image: block.logo?.image || null,
-              url: fullUrl
-            };
-          });
-        callback(results);
-      } else {
-        callback([]);
-      }
+    $.get('/pl/search/search-lesson', { q: searchStr }, function (html) {
+      const $doc = $('<div>').append($.parseHTML(html));
+      const results = [];
+
+      $doc.find('.sp-item-card').each(function () {
+        const $item = $(this);
+        const type = $item.find('.sp-item-type').text().trim();
+        const $link = $item.find('.sp-item-title-link');
+        const title = $link.text().trim();
+        const href = $link.attr('href');
+        const subtitle = $item.find('.sp-item-subtitle').text().replace('→', '').trim();
+        const description = $item.find('.sp-item-short-description').text().trim();
+        const isLesson = type === 'Урок';
+
+        if (href) {
+          const url = href.startsWith('http') ? href : window.location.origin + href;
+          results.push({ isLesson, title, description: subtitle || description, image: null, url });
+        }
+      });
+
+      callback(results);
+    }).fail(function () {
+      callback([]);
     });
   }
 
